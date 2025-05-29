@@ -8,7 +8,8 @@ title: Blog
 Welcome to my blog! I write about:
 
 - Robotics implementation experiences
-- ROS tutorials and configs
+- Real life impact of Robotics
+<!-- - ROS tutorials and configs -->
 - Reflections on research or tech events
 
 ## Posts
