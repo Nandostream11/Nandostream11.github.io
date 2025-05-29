@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  background: #121212;
+  color: #eee;
+}
+
+.sidebar {
+  width: 250px;
+  background: #1e1e1e;
+  padding: 20px;
+  height: 100vh;
+}
+
+.profile-img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.main-content {
+  padding: 40px;
+  flex: 1;
+}
+
+a {
+  color: #66d9ef;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}

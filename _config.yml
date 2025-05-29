@@ -1,5 +1,9 @@
-title: "Anand Vardhan"
-description: "Robotics | Systems | Learning"
+title: Anand Vardhan
+description: Robotics | Embedded Systems | ROS Developer
 theme: minima
-baseurl: ""
-url: "https://yourusername.github.io"
+baseurl: "" 
+url: "https://yourusername.github.io" 
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+

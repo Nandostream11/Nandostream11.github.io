@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% include head.html %}
-  </head>
-  <body>
-    <div class="container">
-      {% include sidebar.html %}
-      <main class="content">
-        {{ content }}
-      </main>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    {% include sidebar.html %}
+  </div>
+  <div class="main-content">
+    {{ content }}
+  </div>
+</body>
 </html>
