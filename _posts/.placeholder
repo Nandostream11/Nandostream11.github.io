@@ -5,3 +5,87 @@ ESP Now Protocol, Voice Command Guided MR
 Legged Robot
 
 AUG optimal parameter prediction for a given control algorithm
+# some syntaxes
+
+<!-- ![img-description](/path/to/image)
+_Image Caption_ -->
+<!-- ![Desktop View](/assets/img/sample/mockup.png){: w="700" h="400" } -->
+<!-- ![Desktop View](/assets/img/sample/mockup.png){: .normal }       -->
+<!--can have  .normal/.left/.right -->
+<!-- ![Light mode only](/path/to/light-mode.png){: .light } -->
+<!-- ![Dark mode only](/path/to/dark-mode.png){: .dark } -->
+
+<!-- ![Desktop View](/assets/img/sample/mockup.png){: .shadow } -->
+
+
+<!-- {%
+  include embed/video.html
+  src='/path/to/video.mp4'
+  types='ogg|mov'
+  poster='poster.png'
+  title='Demo video'
+  autoplay=true
+  loop=true
+  muted=true
+%} -->
+
+<!-- {% include embed/{platform}.html id='{ID}' %}  -->         
+<!-- for embedding social media videos eg: https://www.youtube.com/watch?v=H-B46URT4mg ID= H-B46URT4mg, platform= youtube-->
+
+<!-- audio file:- -->
+<!-- {%
+  include embed/audio.html
+  src='/path/to/audio.mp3'
+  types='ogg|wav|aac'
+  title='Demo audio'
+%}
+ -->
+
+ <!-- prompt of types- tip, info, warning, and danger  -->
+ <!-- > Example line for prompt.
+{: .prompt-info } -->
+
+
+
+<!-- Block math, keep all blank lines -->
+
+$$
+LaTeX_math_expression
+$$
+
+<!-- Equation numbering, keep all blank lines  -->
+
+$$
+\begin{equation}
+  LaTeX_math_expression
+  \label{eq:label_name}
+\end{equation}
+$$
+
+Can be referenced as \eqref{eq:label_name}.
+
+<!-- Inline math in lines, NO blank lines -->
+
+"Lorem ipsum dolor sit amet, $$ LaTeX_math_expression $$ consectetur adipiscing elit."
+
+<!-- Inline math in lists, escape the first `$` -->
+
+1. \$$ LaTeX_math_expression $$
+2. \$$ LaTeX_math_expression $$
+3. \$$ LaTeX_math_expression $$
+
+
+# code blocks
+`inline code part`
+
+`/path/to/a/file.extend`{: .filepath}
+
+```shell
+echo 'No more line numbers!'
+```
+{: .nolineno }
+
+```shell
+# content
+```
+{: file="path/to/file" }
