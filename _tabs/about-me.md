@@ -22,7 +22,7 @@ order: 1
 I am passionate about Robotics, Design & Perception
 I have worked on Legged Robots and Mobile Robots. I'm looking forward to collaborating on Drone-based(Underwater) projects. I look for to connecting and collaborating with more robotics thusiasts on learning Integration of cutting-edge tech with Software Applications for the learning-based control of robots
 
-Currently building Legged Robots and Mobile Robots for autonomous terrain traversal. Actively exploring Drone-based applications and excited to collaborate on related projects. Learning to integrate Machine Learning into robotic control systems for adaptive and intelligent behavior. Always working on real-world robotics projects with an aim to push boundaries in autonomous systems
+Currently building Legged Robots and Mobile Robots for autonomous terrain traversal. Actively exploring Drone-based applications and excited to collaborate on related projects. Learning to integrate Machine Learning into robotic control systems for adaptive and intelligent behavior. Always working on real-world robotics problems with an aim to push boundaries in autonomous systems
 
 # Contact
 

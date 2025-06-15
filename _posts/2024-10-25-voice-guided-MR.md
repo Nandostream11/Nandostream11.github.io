@@ -1,7 +1,7 @@
 ---
 title: Voice Command Guided Mobile Robot
 date: 2024-10-25 00:00:00 +0530
-categories: [Blog, Robotics]
+categories: [Projects, Robotics]
 tags: [mobile robots, esp now]     # TAG names should always be lowercase
 author: <author_id>
 mermaid: true

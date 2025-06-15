@@ -9,3 +9,39 @@
 ';
 
 /* append your custom style below */
+
+.post-preview::before {
+  pointer-events: none !important;
+}
+.post-preview:hover::before {
+  opacity: 0.01 !important; /* Reduce opacity on hover */
+}
+
+/* Fix image size to maximum 300x200px */
+.preview-img {
+  max-width: 300px !important;
+  max-height: 200px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* Ensure container doesn't exceed maximum size */
+.preview-img img {
+  max-width: 300px !important;
+  max-height: 200px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* For post content images */
+.post .preview-img,
+article .preview-img {
+  max-width: 400px !important;
+  max-height: 300px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  background: none !important;
+}

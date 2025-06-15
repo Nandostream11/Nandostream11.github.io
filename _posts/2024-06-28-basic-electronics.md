@@ -7,7 +7,7 @@ author: <author_id>
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
-# image: /assets/images/tinkercad_circuits_1.png    #to simply add an image
+image: /assets/images/wokwi_circuits_1.png    #to simply add an image
 # description: Short summary of the post.
 # toc: false        #to turn off table of contents on right side for this post
 # comments: false      #to turn off comments for this post
@@ -15,7 +15,7 @@ math: true          #MathJax enabled
 # image:                        #for thumbnail
 #   path: /path/to/image
 #   alt: image alternative text
-
+excerpt: "This post introduces the basics of electronics and microcontrollers, including Arduino and IoT."
 ---
 
 
