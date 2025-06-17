@@ -5,7 +5,7 @@ categories: [Projects, Robotics]
 tags: [mobile robots, esp now]     # TAG names should always be lowercase
 author: <author_id>
 mermaid: true
-image: /assets/images/Mobile_robot.png
+image: /assets/images/MobileRobot.png
 ---
 
 # Introduction
