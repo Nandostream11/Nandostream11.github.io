@@ -35,12 +35,14 @@ jobs:
           os.makedirs("_posts", exist_ok=True)
           os.makedirs("assets/images", exist_ok=True)
 
-          # Get existing filenames to skip duplicates
           existing_posts = set(os.listdir("_posts"))
 
           def download_image(url):
               try:
-                  filename = hashlib.md5(url.encode()).hexdigest() + os.path.splitext(urlparse(url).path)[-1]
+                  ext = os.path.splitext(urlparse(url).path)[-1]
+                  if not ext or ext.lower() not in [".jpg", ".jpeg", ".png", ".webp", ".gif"]:
+                      ext = ".png"
+                  filename = hashlib.md5(url.encode()).hexdigest() + ext
                   local_path = f"assets/images/{filename}"
                   if not os.path.exists(local_path):
                       response = requests.get(url)
@@ -51,30 +53,48 @@ jobs:
                   print(f"Failed to download {url}: {e}")
                   return url
 
-          for entry in feed.entries[:5]:  # Adjust this number as needed
-              # Generate safe filename based on title and date
-              title = re.sub(r'[^\w\s-]', '', entry.title).strip().lower().replace(' ', '-')
-              date = datetime.datetime(*entry.published_parsed[:3]).date()
-              filename = f"{date}-{title}.md"
+          for entry in feed.entries[:5]:
+              title_text = entry.title
+              title_slug = re.sub(r'[^\w\s-]', '', title_text).strip().lower().replace(' ', '-')
+              date_obj = datetime.datetime(*entry.published_parsed[:6])
+              date_str = date_obj.strftime("%Y-%m-%d %H:%M:%S +0530")
+              file_slug = date_obj.date().isoformat() + "-" + title_slug + ".md"
 
-              if filename in existing_posts:
-                  print(f"Skipping already parsed post: {filename}")
+              if file_slug in existing_posts:
+                  print(f"Skipping already parsed post: {file_slug}")
                   continue
 
               content_html = entry.content[0].value
               soup = BeautifulSoup(content_html, "html.parser")
 
-              for img in soup.find_all("img"):
-                  src = img.get("src")
-                  if src and "medium.com" in src:
-                      local_src = download_image(src)
-                      img["src"] = local_src
+              image_urls = [img.get("src") for img in soup.find_all("img") if "medium.com" in (img.get("src") or "")]
+              local_images = [download_image(url) for url in image_urls if url]
+              # Replace <img> tags in HTML
+              for img, new_src in zip(soup.find_all("img"), local_images):
+                  img["src"] = new_src
 
-              markdown = md(str(soup))
-              with open(f"_posts/{filename}", "w", encoding="utf-8") as f:
-                  f.write(f"---\ntitle: \"{entry.title}\"\ndate: {date}\nlayout: post\n---\n\n")
-                  f.write(markdown)
+              markdown_body = md(str(soup))
+
+              # Determine frontmatter fields
+              frontmatter = {
+                  "title": title_text,
+                  "date": date_str,
+                  "categories": "[Blog, Medium]",
+                  "tags": f"[{', '.join(sorted(set(re.findall(r'#?\\b([a-z0-9-]+)\\b', markdown_body.lower())))})]",
+                  "author": "anandvk113",
+                  "mermaid": "true",
+                  "image": local_images[0] if local_images else "/assets/images/default.png",
+                  "excerpt": f"\"{markdown_body.strip().splitlines()[0][:200]}...\""
+              }
+
+              with open(f"_posts/{file_slug}", "w", encoding="utf-8") as f:
+                  f.write("---\n")
+                  for key, value in frontmatter.items():
+                      f.write(f"{key}: {value}\n")
+                  f.write("---\n\n")
+                  f.write(markdown_body)
           EOF
+
 
       - name: Commit and push
         run: |
