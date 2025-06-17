@@ -1,0 +1,85 @@
+name: Sync Medium posts with local image download (optimized)
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-medium:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitHub Pages blog repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install feedparser markdownify requests beautifulsoup4
+
+      - name: Parse RSS, convert new posts only, download images
+        run: |
+          python <<EOF
+          import feedparser
+          from markdownify import markdownify as md
+          import os, re, requests, hashlib
+          import datetime
+          from bs4 import BeautifulSoup
+          from urllib.parse import urlparse
+
+          feed_url = "https://medium.com/feed/@anandvk113"
+          feed = feedparser.parse(feed_url)
+
+          os.makedirs("_posts", exist_ok=True)
+          os.makedirs("assets/images", exist_ok=True)
+
+          # Get existing filenames to skip duplicates
+          existing_posts = set(os.listdir("_posts"))
+
+          def download_image(url):
+              try:
+                  filename = hashlib.md5(url.encode()).hexdigest() + os.path.splitext(urlparse(url).path)[-1]
+                  local_path = f"assets/images/{filename}"
+                  if not os.path.exists(local_path):
+                      response = requests.get(url)
+                      with open(local_path, "wb") as f:
+                          f.write(response.content)
+                  return "/" + local_path
+              except Exception as e:
+                  print(f"Failed to download {url}: {e}")
+                  return url
+
+          for entry in feed.entries[:5]:  # Adjust this number as needed
+              # Generate safe filename based on title and date
+              title = re.sub(r'[^\w\s-]', '', entry.title).strip().lower().replace(' ', '-')
+              date = datetime.datetime(*entry.published_parsed[:3]).date()
+              filename = f"{date}-{title}.md"
+
+              if filename in existing_posts:
+                  print(f"Skipping already parsed post: {filename}")
+                  continue
+
+              content_html = entry.content[0].value
+              soup = BeautifulSoup(content_html, "html.parser")
+
+              for img in soup.find_all("img"):
+                  src = img.get("src")
+                  if src and "medium.com" in src:
+                      local_src = download_image(src)
+                      img["src"] = local_src
+
+              markdown = md(str(soup))
+              with open(f"_posts/{filename}", "w", encoding="utf-8") as f:
+                  f.write(f"---\ntitle: \"{entry.title}\"\ndate: {date}\nlayout: post\n---\n\n")
+                  f.write(markdown)
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add _posts assets/images
+          git diff --cached --quiet || git commit -m "Auto-sync new Medium posts with images"
+          git push
