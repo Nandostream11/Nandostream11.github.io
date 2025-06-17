@@ -2,7 +2,7 @@ name: Sync Medium posts with local image download (optimized)
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Daily at 08:00 UTC
+    - cron: '0 8 * * 1'  # Daily at 08:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -25,6 +25,7 @@ jobs:
           import feedparser
           from markdownify import markdownify as md
           import os, re, requests, hashlib
+          from collections import Counter
           import datetime
           from bs4 import BeautifulSoup
           from urllib.parse import urlparse
@@ -53,6 +54,17 @@ jobs:
                   print(f"Failed to download {url}: {e}")
                   return url
 
+          def get_top_tags(text, n=2):
+              stopwords = set([
+                  "the", "and", "to", "of", "in", "for", "a", "is", "on", "this", "with", "that", "as", "are",
+                  "was", "it", "be", "at", "by", "an", "or", "from", "but", "we", "you", "they", "can", "not", "use",
+                  "has", "have", "will", "which", "your", "all", "more", "our", "about", "any", "also", "if", "it's"
+              ])
+              words = re.findall(r'\b[a-zA-Z][a-zA-Z0-9-]*\b', text.lower())
+              filtered = [w for w in words if w not in stopwords and len(w) > 2]
+              freq = Counter(filtered)
+              return list(dict(freq.most_common(n)).keys())
+
           for entry in feed.entries[:5]:
               title_text = entry.title
               title_slug = re.sub(r'[^\w\s-]', '', title_text).strip().lower().replace(' ', '-')
@@ -69,18 +81,18 @@ jobs:
 
               image_urls = [img.get("src") for img in soup.find_all("img") if "medium.com" in (img.get("src") or "")]
               local_images = [download_image(url) for url in image_urls if url]
-              # Replace <img> tags in HTML
               for img, new_src in zip(soup.find_all("img"), local_images):
                   img["src"] = new_src
 
               markdown_body = md(str(soup))
 
-              # Determine frontmatter fields
+              top_tags = get_top_tags(markdown_body, n=2)
+
               frontmatter = {
                   "title": title_text,
                   "date": date_str,
                   "categories": "[Blog, Medium]",
-                  "tags": f"[{', '.join(sorted(set(re.findall(r'#?\\b([a-z0-9-]+)\\b', markdown_body.lower())))})]",
+                  "tags": f"[{', '.join(top_tags)}]",
                   "author": "anandvk113",
                   "mermaid": "true",
                   "image": local_images[0] if local_images else "/assets/images/default.png",
@@ -94,7 +106,6 @@ jobs:
                   f.write("---\n\n")
                   f.write(markdown_body)
           EOF
-
 
       - name: Commit and push
         run: |
