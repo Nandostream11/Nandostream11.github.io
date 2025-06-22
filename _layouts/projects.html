@@ -77,7 +77,7 @@ layout: page
                   </div>
                   <p>
                       {% comment %} {% include no-linenos.html content=post.content %} {% endcomment %}
-                      {{ post.content | markdownify | strip_html | truncate: 200 }}
+                      {{ post.excerpt | markdownify | strip_html | truncate: 200 }}
                   </p>
               </div>
 
