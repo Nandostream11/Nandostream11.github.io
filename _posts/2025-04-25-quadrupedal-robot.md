@@ -5,8 +5,8 @@ categories: [Projects, Robotics]
 tags: [quadruped, legged-robot]     # TAG names should always be lowercase
 author: <author_id>
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
-mermaid: true       #diagram gen tool
-math: true          #MathJax enabled
+# mermaid: true       #diagram gen tool
+# math: true          #MathJax enabled
 image: /assets/images/Jack(phase1).png    #to simply add an image
 # description: Short summary of the post.
 # toc: false        #to turn off table of contents on right side for this post
@@ -31,7 +31,7 @@ We first programmmed a single Leg with the analogy of a robotic Arm
 
 ## **Phase II**
 
-The $2^{nd}$ Phase project with my  with two of my batchmates- [Dhananjay A.](https://www.linkedin.com/in/dhananjay-abbot-3ba776198), [Harshit K]() and a senior, [Vedhamsh Bode](https://www.linkedin.com/in/vedhamsh-bode-09a147229)
+The $2^{nd}$ Phase project with my  with two of my batchmates- [Dhananjay A.](https://www.linkedin.com/in/dhananjay-abbot-3ba776198), [Harshit K](https://www.linkedin.com/in/harshit-k-1aa799276) and a senior, [Vedhamsh Bode](https://www.linkedin.com/in/vedhamsh-bode-09a147229)
 
 
 <!-- [*Google*](https://google.com) -->
