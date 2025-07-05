@@ -2,7 +2,7 @@ name: Sync Medium posts with local image download (optimized)
 
 on:
   schedule:
-    - cron: '0 8 * * 1'  # Daily at 08:00 UTC
+    - cron: "0 8 * * 1" # Daily at 08:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -93,7 +93,7 @@ jobs:
                   "date": date_str,
                   "categories": "[Blog, Medium]",
                   "tags": f"[{', '.join(top_tags)}]",
-                  "author": "anandvk113",
+                  "author": "<author_id>",
                   "mermaid": "true",
                   "image": local_images[0] if local_images else "/assets/images/default.png",
                   "excerpt": f"\"{markdown_body.strip().splitlines()[0][:200]}...\""
