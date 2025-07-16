@@ -95,7 +95,7 @@ jobs:
                   "tags": f"[{', '.join(top_tags)}]",
                   "author": "<author_id>",
                   "mermaid": "true",
-                  "image": local_images[0] if local_images else "/assets/images/default.png",
+                  "image": local_images[1] if local_images else "/assets/images/default.png",
                   "excerpt": f"\"{markdown_body.strip().splitlines()[0][:200]}...\""
               }
 

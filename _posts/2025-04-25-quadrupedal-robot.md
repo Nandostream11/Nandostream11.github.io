@@ -36,33 +36,33 @@ This project was executed in two phases during my undergraduate journey:
 
 ## **Phase I: Prototype Development**
 In Phase I, we successfully built a working prototype of JACK, our quadrupedal robot, integrating custom mechanical, electronic, and control systems.
+I worked on the electronics and learned the design aspects while working with my senior, [Santosh K. Prajapat](https://www.linkedin.com/in/santosh-kumar-prajapat). In this phase the legged robot was designed from scratch with some design experimentation and analytical approach. 
 
-**Mechanical Design**- The robot features a flat-plate main body, differing from the cylindrical forms seen in commercial robots like the Unitree Go1/2. 
-Each leg is designed with three joints, analogous to a robotic arm, and actuated by servo motors. The CAD model was created using Autodesk Fusion, allowing for iterative design and experimentation.
+### **Mechanical Design**
+Each leg is designed with three joints, analogous to a robotic arm, and actuated by servo motors. The mechanical frame was designed using Autodesk Fusion 360, and the legs were assembled with three servo-driven joints each, allowing for iterative design and experimentation. Apart from the leg designs, the main body was kept as a flat plate unlike the cylindrical structure seen in service robots like Unitree Go1/2.
 
 ![CAD Model of the Legged_Robot Phase 1 made on Autodesk Fusion 360](/assets/images/Legged-cad.png){: w="400"  }
 _CAD Model of the Legged_Robot Phase 1 made on Autodesk Fusion 360_ 
 
-**Electronics & Hardware**- A custom RX-TX wired controller with Arduino Boards was developed on a PCB, featuring a joystick for directional control and buttons to switch between gait patterns. The electronics were designed to support real-time embedded control and communication with the robot’s actuators.
+### **Electronics & Hardware**
+The initial phase focused on building a functional prototype from scratch. A custom RX-TX wired controller with Arduino Boards was developed on a PCB, featuring a joystick for driving the speed of body movement in any direction and buttons for directional control and to switch between gait patterns(referring to march past and the most common, trot gait; gait system was not much established in this phase). 
+The electronics were designed to support real-time embedded control and communication with the robot’s actuators.
+The electronics were custom-built, featuring an Arduino-based controller and a wired joystick interface for manual operation. \
+![High level view of the inverse kinematics for each leg](/assets/images/Controller(phase1).png){: w="250"  }
+_In-hand Controller counterpart_ 
 
-**Kinematics & Control**- The leg kinematics were modeled in MATLAB Simulink using inverse kinematics solvers. Using MATLAB Simulink allowed us to quickly iterate on the kinematic model and validate the joint trajectories before physical implementation. This enabled precise control of each leg’s movement, allowing the robot to achieve basic locomotion in three degrees of freedom (x, y, yaw) via joystick input.
+### **Kinematics & Control**
+The leg kinematics were modeled in MATLAB Simulink using inverse kinematics solvers. Using MATLAB Simulink allowed us to quickly iterate on the kinematic model and validate the joint trajectories before physical implementation. This enabled precise control of each leg’s movement, allowing the robot to achieve basic locomotion in three degrees of freedom (x, y, yaw) via joystick input.
 
-I worked on the electronics and learned the design aspects while working with my senior, [Santosh K. Prajapat](https://www.linkedin.com/in/santosh-kumar-prajapat). In this phase the legged robot was designed from scratch with some design experimentation and analytical approach. \
-The initial phase focused on building a functional prototype from scratch. The mechanical frame was designed using Autodesk Fusion 360, and the legs were assembled with three servo-driven joints each. The electronics were custom-built, featuring an Arduino-based controller and a wired joystick interface for manual operation. \
-![4-Legged Robot](/assets/images/Base-electronics(phase1).png){: w="500"  }
-_Top view of the base electronics_ 
-Apart from the leg designs, the main body was kept as a flat plate unlike the cylindrical structure seen in service robots like Unitree Go1/2. This robot was prepared as a part of a Robotics Fundamentals course curriculum and we reached some basic Low level embedded & MATLAB programmed stage could command the robot to move in 3 degrees (x, y, yaw) with a joystick. 
-
-We first programmmed the three joints in a single Leg with the analogy of a robotic Arm with 3 servo motors. The leg kinematics was modelled with MATLAB Simulink using inverse solver. \
-<!-- ![4-Legged Robot](/assets/images/IKRobotleg.png){: w="600"  }
-_Simulink blocks for point-wise Inverse Kinematics to get joint angles for each point_   -->
 ![4-Legged Robot](/assets/images/high-level-view.png){: w="800"  }
 _High level view of the Inverse kinematics for each leg_ 
 
-A RX-TX wired controller was designed on a pcb with a joystick to drive the speed of body movement in a direction and the buttons are used to change the pattern(referring to march past and the most common, trot gait; gait system was not much established in this phase) and direction of body motion 
-
-![High level view of the inverse kinematics for each leg](/assets/images/Controller(phase1).png){: w="250"  }
-_In-hand Controller counterpart_ 
+ This robot was prepared as a part of a Robotics Fundamentals course curriculum and we reached some basic Low level embedded & MATLAB programmed stage.
+We first programmmed the three joints in a single Leg with the analogy of a robotic Arm with 3 servo motors. The leg kinematics was modelled with MATLAB Simulink using inverse solver. \
+<!-- ![4-Legged Robot](/assets/images/IKRobotleg.png){: w="600"  }
+_Simulink blocks for point-wise Inverse Kinematics to get joint angles for each point_   -->
+![4-Legged Robot](/assets/images/Base-electronics(phase1).png){: w="500"  }
+_Top view of the base electronics_ 
 
 At the end of phase I, each leg of the 4-Legged Robot dog could move using continuous Inverse Kinematics to produce joint angles as per the desired trajectory point. An algorithm code was made in order to control the motion of the robot dog as per the input from a in hand Controller device. The Controller setup present onboard the Robot dog processes the input to perform the power distribution into the separate motors to locomote in a particular direction. 
 
@@ -71,7 +71,7 @@ _Testbench setup to run tests for the leg motion and trajectory following_
 
 Testing was conducted on a custom testbench to validate leg trajectories and overall stability. The prototype successfully demonstrated basic walking, turning, and stopping maneuvers. These tests highlighted areas for mechanical reinforcement(like X-bar reinforcement, foot grippers) and software optimization(sleeps cycles, control algorithms to minimize jerks, reduction in overheating of the electronics).
 
-Such a mechanized quadrupedal robot can be leveraged to various applications like inspection/investigation of an area.
+Such a mechanized quadrupedal robot can be leveraged to various applications like *inspection/investigation* of an area. The demonstration of this 4-legged robot prototype won the **first prize at the Inter-Departmental Research Meet '24**.
 
 ## **Phase II: Improvements & Advanced Features**
 
@@ -87,10 +87,10 @@ _Modified Quadruped Design and body_
 
 In the second phase, the robot’s torso structure was replaced with a metallic body reinforced for durability, and additional sensors(LIDAR, IMU) were integrated for feedback. The embedded stack was upgraded with an onboard processor(Raspberry Pi) running the microcontroller to support wireless operation using remote ssh, and the software was modularized for easier experimentation. Wireless communication enabled remote control and debugging. The robot’s navigation system was enhanced to allow remote operation for now.
 
-**High-Level Control & Navigation**
+### **High-Level Control Setup**
 
 ![Quadruped Architecture](/assets/images/Component_architecture.png){: w="550"  }
-_Robot Dog Architecture_ 
+_HL Architecture of the Robot Dog_ 
 
 **Remote Debugging & Operation (via Raspberry Pi):** Our quadruped robot is equipped with a Raspberry Pi 4B as its central processing unit, enabling remote access over Wi-Fi or SSH. This setup allows us to:
 - Monitor sensor data in real-time.
@@ -101,31 +101,7 @@ The Pi can act as a bridge between sensor feedback and the actuation logic, ensu
 ![Quadruped Architecture](/assets/images/Jack_Rviz.png){: w="400"  }
 _JACK TF vectors in Rviz view_
 
-**Navigation Algorithms:** At present, the quadruped is remotely operated. We're making it semi-autonomous(mission based) with:
-- A path planning on 2D occupancy grids generated from LiDAR data.
-- Custom logic for re-routing when IMU detects instability (e.g., large roll/pitch).
-- Basic waypoint tracking to move the robot along a desired path, using dead-reckoning corrected by LiDAR-based odometry.
-
-**Field Test Results:** Initial walking tests on tiled and moderately uneven outdoor surfaces showed:
-- 33% improved stability with feedback-integrated torso adjustments.
-- Reduced leg drag and fewer missed steps compared to earlier versions.
-<!-- - The robot could navigate around low-height obstacles (<7 cm) using 2D LiDAR scans. -->
-
-<!-- Gait generation algorithms were improved to support smoother and more stable walking patterns. The modular software design allowed for quick testing of new gait strategies and locomotion experiments. -->
-**Gait Planning & Locomotion**
-
-![Hildebrand chart of Trot gait](/assets/images/hildebrand.png){: w="550"  }
-_Hildebrand chart of Trot gait_ 
-
-**Gait Evolution:** We started with a basic trot gait but observed instability due to poor body weight distribution or some dynamic constraints. The gait engine is being upgraded to support:
-- Height-adaptive stride length, reducing ground impact during each step.
-- Dynamic phase-shifted gaits (e.g., crawl gait with staggered leg motion).
-- Stability-aware gait switching, influenced by IMU tilt data, and other techniques
-
-![Testbench setup to run tests for the leg motion and trajectory following](/assets/images/trajectory_control_setup.png){: w="350"  }
-_Simulation Testbench in Rviz for testing foot trajectory following_
-
-**Sensor Integration**
+### **Sensor Integration**
     IMU (BNO055): Measures orientation (roll, pitch, yaw), essential for CoG adjustment. Used to detect tilt and re-center the body by adjusting leg heights dynamically.
     2D LiDAR: Generates a 2D scan of the surroundings for obstacle detection and local path planning.
 
@@ -136,6 +112,38 @@ _Simulation Testbench in Rviz for testing foot trajectory following_
 - IMU Calibration: Done using ROS’s calibration nodes and manual static averaging.
 - Low-Pass Filtering: Applied to raw IMU output to reduce noise (cutoff freq ~5Hz).
 - LiDAR Preprocessing: Range data filtered for noise using rolling average windows before occupancy mapping.  -->
+<!-- ![Quadruped Architecture](/assets/images/Jack_Rviz.png){: w="400"  }
+_JACK TF vectors in Rviz view_ -->
+
+### Motion & Navigation
+**Leg Trajectory planning & Locomotion**
+ And this time we setup to the Leg testbench stand in RviZ to avoid the environmental faults and cautioning for our servos damage due to prolonged command or unconstrained valuesthat occur in hardware testing during algorithm development and testing
+
+![Testbench setup to run tests for the leg motion and trajectory following](/assets/images/trajectory_control_setup.png){: w="350"  }
+_Simulation Testbench in Rviz for testing foot trajectory following_
+
+**Gait Evolution:** We started with a basic trot gait but observed instability due to poor body weight distribution or some dynamic constraints. The gait engine is being upgraded to support:
+- Height-adaptive stride length, reducing ground impact during each step.
+- Dynamic phase-shifted gaits (e.g., crawl gait with staggered leg motion).
+- Stability-aware gait switching, influenced by IMU tilt data, and other techniques
+
+![Hildebrand chart of Trot gait](/assets/images/hildebrand.png){: w="550"  }
+_Hildebrand chart of Trot gait_ 
+
+**Navigation Algorithms:** At present, the quadruped is remotely operated. We're making it semi-autonomous(mission based) with:
+- A path planning on 2D occupancy grids generated from LiDAR data.
+- Custom logic for re-routing when IMU detects instability (e.g., large roll/pitch).
+- Basic waypoint tracking to move the robot along a desired path, using dead-reckoning corrected by LiDAR-based odometry.
+
+<!-- Gait generation algorithms were improved to support smoother and more stable walking patterns. The modular software design allowed for quick testing of new gait strategies and locomotion experiments. -->
+![Quadruped Gazebo](/assets/images/Gazebo_test_setup.png){: w="400"  }
+_The JACK in The Gazebo Sim_
+
+**Field Test Results:** Initial walking tests on tiled and moderately uneven outdoor surfaces showed:
+- Reduced leg drag and fewer missed steps compared to earlier versions.
+- More controllability with the onboard Kinematics solver stack and a well defined High level layer.
+<!-- - 33% improved stability with feedback-integrated torso adjustments. -->
+<!-- - The robot could navigate around low-height obstacles (<7 cm) using 2D LiDAR scans. -->
 
 **Challenges:** Key challenges included achieving reliable leg synchronization, managing weight distribution, and ensuring robust wireless communication. Mechanical wear and servo calibration also required ongoing attention.
 
@@ -147,6 +155,7 @@ The Demonstration video of the Quadruped can be found below or [here](https://yo
 {% 
   include embed/youtube.html id='Hp6pkhH9xcw' 
 %}
+The Github Repo can be found here: [Quadrupedal-Robot-Jack](https://github.com/Nandostream11/Quadrupedal-Robot-Jack/tree/main) \
 
 Research Directions:
 - Investigate Reinforcement Learning for adaptive gait control based on terrain type and using other techniques on the to-do list.
