@@ -102,8 +102,8 @@ The Pi can act as a bridge between sensor feedback and the actuation logic, ensu
 _JACK TF vectors in Rviz view_
 
 ### **Sensor Integration**
-    IMU (BNO055): Measures orientation (roll, pitch, yaw), essential for CoG adjustment. Used to detect tilt and re-center the body by adjusting leg heights dynamically.
-    2D LiDAR: Generates a 2D scan of the surroundings for obstacle detection and local path planning.
+IMU (BNO055): Measures orientation (roll, pitch, yaw), essential for CoG adjustment. Used to detect tilt and re-center the body by adjusting leg heights dynamically. \
+2D LiDAR: Generates a 2D scan of the surroundings for obstacle detection and local path planning.
 
 <!-- **Sensor Fusion with Control Loops:**
 - IMU data feeds into a PID controller that adjusts hip servo positions to stabilize the torso.
@@ -155,7 +155,7 @@ The Demonstration video of the Quadruped can be found below or [here](https://yo
 {% 
   include embed/youtube.html id='Hp6pkhH9xcw' 
 %}
-The Github Repo can be found here: [Quadrupedal-Robot-Jack](https://github.com/Nandostream11/Quadrupedal-Robot-Jack/tree/main) \
+The Github Repo can be found here: [Quadrupedal-Robot-Jack](https://github.com/Nandostream11/Quadrupedal-Robot-Jack/tree/main) 
 
 Research Directions:
 - Investigate Reinforcement Learning for adaptive gait control based on terrain type and using other techniques on the to-do list.
