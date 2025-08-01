@@ -139,17 +139,20 @@ _Hildebrand chart of Trot gait_
 ![Quadruped Gazebo](/assets/images/Gazebo_test_setup.png){: w="400"  }
 _The JACK in The Gazebo Sim_
 
-**Field Test Results:** Initial walking tests on tiled and moderately uneven outdoor surfaces showed:
+### Field Test Results:
+Initial walking tests on tiled and moderately uneven outdoor surfaces showed:
 - Reduced leg drag and fewer missed steps compared to earlier versions.
 - More controllability with the onboard Kinematics solver stack and a well defined High level layer.
 <!-- - 33% improved stability with feedback-integrated torso adjustments. -->
 <!-- - The robot could navigate around low-height obstacles (<7 cm) using 2D LiDAR scans. -->
 
-**Challenges:** Key challenges included achieving reliable leg synchronization, managing weight distribution, and ensuring robust wireless communication. Mechanical wear and servo calibration also required ongoing attention.
+### Challenges: 
+Key challenges included achieving reliable leg synchronization, managing weight distribution, and ensuring robust wireless communication. Mechanical wear and servo calibration also required ongoing attention.
 
 The project was a hands-on experience in multidisciplinary robotics, from CAD design and embedded programming to control theory and systems & sensor integration. Iterative testing and teamwork were crucial for overcoming technical hurdles.
 
-**Future improvements** could include further modification to implement semi-autonomous nature with the ability to detect and avoid obstacles in real time and advanced SLAM (Simultaneous Localization and Mapping), incorporating visual sensors, upgrading to more powerful actuators, and developing fully autonomous navigation and path planning capabilities.
+## **Future improvements** 
+This Robotic platform can include further modification to implement semi-autonomous nature with the ability to detect and avoid obstacles in real time and advanced SLAM (Simultaneous Localization and Mapping), incorporating visual sensors, upgrading to more powerful actuators, and developing fully autonomous navigation and path planning capabilities.
 
 The Demonstration video of the Quadruped can be found below or [here](https://youtu.be/Hp6pkhH9xcw?si=ltFwWZ1HxxBvtAd4)
 {% 
@@ -157,12 +160,12 @@ The Demonstration video of the Quadruped can be found below or [here](https://yo
 %}
 The Github Repo can be found here: [Quadrupedal-Robot-Jack](https://github.com/Nandostream11/Quadrupedal-Robot-Jack/tree/main) 
 
-Research Directions:
+**Research Directions:**
 - Investigate Reinforcement Learning for adaptive gait control based on terrain type and using other techniques on the to-do list.
 <!-- - Deploy a Neural Net-based CoG estimator trained on simulated terrain data. -->
 - Develop ROS2 Nav2 stack compatibility for integrating global planners.
 
-*References & Resources:*
+**References & Resources:**
 - [MATLAB Simulink Documentation](https://www.mathworks.com/products/simulink.html)
 - [ROS Doumentation](https://docs.ros.org/)
 - [Unitree Robotics](https://github.com/unitreerobotics)
