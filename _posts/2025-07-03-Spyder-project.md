@@ -11,7 +11,7 @@ image: /assets/images/spider.jpg    #to simply add an image
 excerpt: "An Independent Summer Internship project"
 ---
 
-## 🧠 Introduction: Sharpening the Axe Before the Swing
+## Introduction: Sharpening the Axe Before the Swing
 
 In the spirit of the age-old lumberjack analogy, this project wasn't about rushing to build a robot. Instead, it was a meticulously pre-planned engineering experiment, focusing not only on functionality but on modularity, control theory, and real-time human-robot interaction.
 
@@ -27,10 +27,12 @@ Over the summer, I built **Quad-Spider**, a Bluetooth-controlled quadruped robot
 - **Servos:** 12 × SG90 servo motors (PWM-controlled)  
 - **Structure:** Lightweight acrylic chassis, designed for symmetry and center-of-mass alignment  
 - **Power Source:** 11.1V 2200mAh LiPo Battery regulated via a **buck converter** to 5–6V for stable servo operation  
+![Spyder model](/assets/images/spider.jpg){: w="300"  }
+_Spyder model_
 
 ### Pin Mapping
 
-- **Servo Pins:** Digital Pins 2–13 (1 per servo)  
+- **Servo Control Pins:** Digital Pins 2–13 (1 per servo)  
 - **Bluetooth TX/RX:** Pins 10 (RX), 11 (TX) via `SoftwareSerial`  
 - **Arduino Board:** Arduino Uno or Nano  
 
@@ -87,7 +89,8 @@ if (BTSerial.available()) {
 ```
 
 This allows precise one-line-at-a-time parsing with low memory overhead.
-### 📱 The Custom App – Built with MIT App Inventor
+### 📱 [The Custom App](https://gallery.appinventor.mit.edu/?galleryid=2efb529e-4fd4-4e29-9e0e-647f524872d5) – Built with MIT App Inventor
+
 #### Features
 
 - Clean UI with command buttons (Walk, Sit, Wave, etc.)
