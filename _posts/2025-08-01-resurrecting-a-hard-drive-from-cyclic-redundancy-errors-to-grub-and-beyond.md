@@ -1,5 +1,5 @@
 ---
-title: Resurrecting a Hard Drive: From Cyclic Redundancy Errors to GRUB and Beyond
+title: Resurrecting a Hard Drive- From Cyclic Redundancy Errors to GRUB and Beyond
 date: 2025-08-01 08:26:48 +0530
 categories: [Blog, Medium]
 tags: [drive, windows]
