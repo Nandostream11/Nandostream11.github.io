@@ -1,11 +1,33 @@
+---
+title: Basic Electronics & Microcontrollers
+date: 2024-06-28 00:00:00 +0530
+categories: [Projects, Robotics]
+tags: [esp now, robotics]     # TAG names should always be lowercase
+author: <author_id>
+# authors: [<author1_id>, <author2_id>]   # for multiple entries
+mermaid: true       #diagram gen tool
+math: true          #MathJax enabled
+image: /assets/images/default-image.jpg    #to simply add an image
+# description: Short summary of the post.
+# toc: false        #to turn off table of contents on right side for this post
+# comments: false      #to turn off comments for this post
+# pin: true             #to pin to top of homepage
+# image:                        #for thumbnail
+#   path: /path/to/image
+#   alt: image alternative text
+excerpt: "This post introduces the basics of electronics and microcontrollers, including Arduino and IoT."
+---
+
 SORob
 
 ESP Now Protocol, Voice Command Guided MR
 
-Legged Robot
-
 AUG optimal parameter prediction for a given control algorithm
 # some syntaxes
+
+# Inside your repo directory
+git submodule add https://github.com/username/other-repo.git path/to/subfolder
+git submodule update --init --recursive
 
 <!-- ![img-description](/path/to/image)
 _Image Caption_ -->
@@ -17,6 +39,7 @@ _Image Caption_ -->
 
 <!-- ![Desktop View](/assets/img/sample/mockup.png){: .shadow } -->
 
+<!-- [*Google*](https://google.com) -->
 
 <!-- {%
   include embed/video.html
@@ -29,7 +52,7 @@ _Image Caption_ -->
   muted=true
 %} -->
 
-<!-- {% include embed/{platform}.html id='{ID}' %}  -->         
+<!-- {% include embed/{platform}.html id='{ID}' %}  -->
 <!-- for embedding social media videos eg: https://www.youtube.com/watch?v=H-B46URT4mg ID= H-B46URT4mg, platform= youtube-->
 
 <!-- audio file:- -->
