@@ -19,11 +19,9 @@ order: 1
 
 <span style="font-size:1.5em;">Hi there! This is Anand.</span>
 
-I am a passionate robotics engineer with a strong inclination toward intelligent systems, design, and perception. My experience spans the development of legged and mobile robots, focusing on robust systems. Having worked on Legged Robots and Mobile Robots, I look forward to collaborating on Drone-based(Underwater) projects as well as more intelligent robotics projects. 
+I am a passionate robotics engineer with a strong inclination toward intelligent systems, design, and perception. My experience spans the development of legged and mobile robots, focusing on robust systems. 
 
-I thrive at the intersection of hardware and software, continuously working to bridge mechanical design, electronics, and algorithmic control. I am always open to collaboration and discussions that push the boundaries of autonomous systems, and I look forward to contributing meaningfully to the future of robotics.
-
-Learning to integrate Machine Learning into robotic control systems for adaptive and intelligent behavior. 
+I thrive at the intersection of hardware and software, working to bridge mechanical design, electronics, and algorithmic control through software frameworks. I am always open to collaboration and discussions that push the boundaries of autonomous systems, and I look forward to contributing meaningfully to the future of robotics.
 
 # Contact
 

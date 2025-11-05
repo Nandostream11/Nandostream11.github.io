@@ -1,5 +1,5 @@
 ---
-title: ML-Guided Design Optimization for Autonomous Underwater Gliders- AUG Design ESTIMA
+title: AUG Design ESTIMA
 date: 2025-06-12 00:00:00 +0530
 categories: [Projects, Machine Learning, Design]
 tags: [machine learning, Underwater glider, design]     # TAG names should always be lowercase
@@ -15,12 +15,13 @@ image: /assets/images/glider.png    #to simply add an image
 # image:                        #for thumbnail
 #   path: /path/to/image
 #   alt: image alternative text
-excerpt: "Isn't running CFD simulations every time a glider needs to optimize a certain performance aspect too hectic or just less on ROI"
+excerpt: "ML-Guided Design Optimization for Autonomous Underwater Gliders(Slocum model with parameteric variability)"
 ---
 
-PS: This is a project based on a problem that I came across while modelling the constraints, equations and analysing CFD simulations used for designing the body of a Glider during my Summer Internship at an Underwater Robotics based company.
+PS: This is a project based on a problem that I came across while modelling the constraints, equations and analysing CFD simulations used for designing the body of a Glider during my Summer Internship at an Underwater Robotics based company. 
 
 ## Introduction
+Isn't running CFD simulations every time a glider needs to optimize a certain performance aspect too hectic or just less on ROI
 The scope of this project is as narrow as the last unexplored frontier itself—**the deep underwater domain**. Despite the exponential rise of aerial and space autonomy tools, we still lack robust, modular, and data-driven tools for **optimizing and designing Autonomous Underwater Vehicles (AUVs)**.
 
 In particular, **Autonomous Underwater Gliders (AUGs)**—which operate by changing buoyancy and exploiting hydrodynamic lift—pose a unique challenge for simulation and iterative design. Current development workflows rely heavily on **computationally intensive CFD (Computational Fluid Dynamics)** simulations or simplified design heuristics, which are not scalable or intelligent enough for rapid prototyping.

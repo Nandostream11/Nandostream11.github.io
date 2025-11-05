@@ -8,7 +8,7 @@ mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
 image: /assets/images/spider.jpg    #to simply add an image
 
-excerpt: "An Independent Summer Internship project"
+excerpt: "A mini-project at a Summer Internship"
 ---
 
 ## Introduction: Sharpening the Axe Before the Swing
@@ -19,7 +19,7 @@ Over the summer, I built **Quad-Spider**, a Bluetooth-controlled quadruped robot
 
 ---
 
-## 🦿 Mechanical and Electrical Framework
+## Mechanical and Electrical Framework
 
 ### Robot Chassis & Motion
 
@@ -38,7 +38,7 @@ _Spyder model_
 
 ---
 
-## 📡 Bluetooth Communication Architecture
+## Bluetooth Communication Architecture
 
 ### Module: HC-05 Bluetooth Serial Module
 
@@ -59,8 +59,8 @@ Each command consists of a keyword and step count, terminated with `\n`.
 
 ---
 
-## 🧠 Software Stack on Arduino
-
+## Software Stack on Arduino
+Yes, you read that right... Instead of a brain for high-end compute, we decided to use this one instead.
 ### Core Libraries
 
 - `Servo.h` for PWM control  
@@ -105,7 +105,7 @@ This allows precise one-line-at-a-time parsing with low memory overhead.
 - Split at \n, select last item from list
 - Display in label or debugger box
 
-## 🧩 Design Thinking & Challenges
+## Design Thinking & Challenges
 ### Constraint-Aware Coding
 
 - 2KB SRAM limit on Arduino Uno
@@ -123,7 +123,7 @@ This allows precise one-line-at-a-time parsing with low memory overhead.
 - Step interpolation added to each transition
 - Reduced jerkiness and improved accuracy
 
-## 📸 Demo & Results
+## Demo & Results
 
 Visit the GitHub Repo to see:
 - Arduino code
@@ -132,11 +132,11 @@ Visit the GitHub Repo to see:
 - Servo math logic and step models
 - Build pictures and videos
 
-## 🚀 Conclusion: A Spider With a Brain
+## Conclusion: A Spider With a Brain
 
-This robot isn't just about crawling—it's about interpreting instructions, executing gait patterns, and wirelessly interacting with a user. It blends mechanical kinematics, embedded systems, and a mobile interface for real-world human-robot communication.
+This robot is not just about crawling, it is about interpreting instructions, executing gait patterns, and wirelessly interacting with a user. It blends mechanical kinematics, embedded systems, and a mobile interface for real-world human-robot communication.
 
-What began as an idea during summer became a fully functional interactive robot—built from scratch using careful planning and relentless debugging.
+What began as an idea during summer became a fully functional interactive robot built from scratch using careful planning and relentless debugging.
 
 Feel free to fork the code, use the hardware map, or even integrate your own AI/ML layer for gesture prediction. The world of robotics is yours to spider-crawl into! 🕷️🤖
 

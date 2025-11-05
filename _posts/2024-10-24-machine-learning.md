@@ -7,8 +7,8 @@ author: <strikers>
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
 image: /assets/images/ml-archi.png    #to simply add an image
-description: Short summary of the post.
-excerpt: "A machine learning model"
+description: There have been various types of ESC models which have been useful for consoling a distressed person but many current dialogue systems face significant challenges.
+excerpt: "A machine learning model for Emotional Support Conversation enhancement"
 ---
 
 ## Introduction  

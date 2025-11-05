@@ -122,6 +122,19 @@ _JACK TF vectors in Rviz view_ -->
 ![Testbench setup to run tests for the leg motion and trajectory following](/assets/images/trajectory_control_setup.png){: w="350"  }
 _Simulation Testbench in Rviz for testing foot trajectory following_
 
+For walking, two different phases are needed from the trajectory of leg foot(end-effector)- Swing phase and stance phase(the two main parts of a gait cycle for the complete sequence of a anatomy(dog)). \
+Stance Phase- The period when the foot is on the ground, absorbing and supporting body weight. (ts=0.6*T)
+- Begins with Initial Contact with ground. 
+- The leg absorbs impact and then pushes the dog forward (propulsion).
+- Ends with Toe-Off, the moment the foot leaves the ground. 
+
+Swing phase- The period when the foot is in the air, moving forward to prepare for the next step.(ts=0.4*T) 
+- Begins with Initial Swing, when the foot lifts off the ground. 
+- The leg moves through the air, preparing for the next contact with the ground.
+
+![Bezier curve Trajectory following for Single Leg](/assets/images/leg_traj_plot.jpg){: w="350"  }
+_Bezier curve trajectory with 6 points(2 overlapping)_
+
 **Gait Evolution:** We started with a basic trot gait but observed instability due to poor body weight distribution or some dynamic constraints. The gait engine is being upgraded to support:
 - Height-adaptive stride length, reducing ground impact during each step.
 - Dynamic phase-shifted gaits (e.g., crawl gait with staggered leg motion).
