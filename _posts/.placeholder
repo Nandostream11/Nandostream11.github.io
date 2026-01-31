@@ -17,18 +17,14 @@ image: /assets/images/default-image.jpg    #to simply add an image
 #   alt: image alternative text
 excerpt: "This post introduces the basics of electronics and microcontrollers, including Arduino and IoT."
 ---
+To be posted soon:-
+SW Projects:
 
-SORob
+- Custom DWA with navigation for a Mobile Robot
+- Wormhole Navigation for on-the-go Inter-Map transition
+- FSM based Interface for Warehouse Mobile Robot Workflow
 
-ESP Now Protocol, Voice Command Guided MR
-
-AUG optimal parameter prediction for a given control algorithm
-# some syntaxes
-
-# Inside your repo directory
-git submodule add https://github.com/username/other-repo.git path/to/subfolder
-git submodule update --init --recursive
-
+Some syntaxes:-
 <!-- ![img-description](/path/to/image)
 _Image Caption_ -->
 <!-- ![Desktop View](/assets/img/sample/mockup.png){: w="700" h="400" } -->
@@ -68,8 +64,6 @@ _Image Caption_ -->
  <!-- > Example line for prompt.
 {: .prompt-info } -->
 
-
-
 <!-- Block math, keep all blank lines -->
 
 $$
@@ -97,8 +91,8 @@ Can be referenced as \eqref{eq:label_name}.
 2. \$$ LaTeX_math_expression $$
 3. \$$ LaTeX_math_expression $$
 
-
 # code blocks
+
 `inline code part`
 
 `/path/to/a/file.extend`{: .filepath}
@@ -106,9 +100,11 @@ Can be referenced as \eqref{eq:label_name}.
 ```shell
 echo 'No more line numbers!'
 ```
+
 {: .nolineno }
 
 ```shell
 # content
 ```
+
 {: file="path/to/file" }

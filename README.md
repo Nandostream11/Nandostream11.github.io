@@ -29,10 +29,18 @@ latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so tha
 
 Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
-Running the site locally: 
-'''bash
-$ bundle exec jekyll serve  #live locally at http://127.0.0.1:4000/
-'''
+### Running the site locally
+
+```bash
+bundle exec jekyll serve  #live locally at http://127.0.0.1:4000/
+```
+
+### Inside your repo directory
+
+```bash
+git submodule add https://github.com/username/other-repo.git path/to/subfolder
+git submodule update --init --recursive
+```
 
 ## Contributing
 
