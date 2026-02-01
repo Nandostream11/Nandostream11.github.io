@@ -52,7 +52,7 @@ jobs:
                   return "/" + local_path
               except Exception as e:
                   print(f"Failed to download {url}: {e}")
-                  return url
+                  return "/assets/images/default.png"
 
           def get_top_tags(text, n=2):
               stopwords = set([
@@ -95,7 +95,7 @@ jobs:
                   "tags": f"[{', '.join(top_tags)}]",
                   "author": "<author_id>",
                   "mermaid": "true",
-                  "image": local_images[1] if len(local_images) > 1 else (local_images[0] if local_images else "/assets/images/default.png"),
+                  "image": local_images[0] if local_images else "/assets/images/default.png",
                   "excerpt": f"\"{markdown_body.strip().splitlines()[0][:200]}...\""
               }
 
