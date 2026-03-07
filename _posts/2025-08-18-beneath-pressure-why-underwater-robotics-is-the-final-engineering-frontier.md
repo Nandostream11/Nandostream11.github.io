@@ -5,7 +5,7 @@ categories: [Blog, Medium]
 tags: [underwater, air]
 author: anand
 mermaid: true
-image: /assets/images/d10a5c48fe9534974026c014cd6d845e.png
+image: /assets/images/da6313a215cc5254f26f4a78eee96f27.png
 excerpt: "*“Water is more hostile than space in many ways. You don’t just need to survive — you need to maneuver, perceive, and think while drowning in darkness.”*  ..."
 ---
 

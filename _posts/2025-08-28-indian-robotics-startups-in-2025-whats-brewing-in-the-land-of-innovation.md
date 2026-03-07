@@ -5,7 +5,7 @@ categories: [Blog, Medium]
 tags: [robotics, india]
 author: anand
 mermaid: true
-image: /assets/images/41211386e5f83f62ffe51135a343bbf5.png
+image: /assets/images/8fc443734ce8f8e806ded9305e9d4c5d.jpeg
 excerpt: "*By Anand Vardhan, Mechatronics Engineer & Robotics Innovator*..."
 ---
 
