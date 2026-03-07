@@ -3,7 +3,7 @@ title: Resurrecting a Hard Drive- From Cyclic Redundancy Errors to GRUB and Beyo
 date: 2025-08-01 08:26:48 +0530
 categories: [Blog, Medium]
 tags: [drive, windows]
-author: <author_id>
+author: anand
 mermaid: true
 image: /assets/images/d8bb2d9fb0c8b98f5906bd92225af153.jpeg
 excerpt: "> A tale of reviving a dying drive, juggling between Windows tools, Linux forensics, and sheer stubbornness...."

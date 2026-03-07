@@ -3,7 +3,7 @@ title: "Quad-Spider: The 4-legged bluetooth Spider"
 date: 2025-07-03 00:00:00 +0530
 categories: [Projects, Internship]
 tags: [robotics, embedded]     # TAG names should always be lowercase
-author: <author_id>
+author: anand
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
 image: /assets/images/spider.jpg    #to simply add an image

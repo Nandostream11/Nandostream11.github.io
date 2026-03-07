@@ -3,7 +3,7 @@ title: The Rise of Smart Underwater Robots- Exploring the Deep with AI
 date: 2025-09-30 19:31:48 +0530
 categories: [Blog, Medium]
 tags: [underwater, auvs]
-author: <author_id>
+author: anand
 mermaid: true
 image: /assets/images/63cf3de736f1605efc4cc4e875599237.jpeg
 excerpt: "> By Anand Vardhan — Robotics Innovator & Underwater Systems Developer..."

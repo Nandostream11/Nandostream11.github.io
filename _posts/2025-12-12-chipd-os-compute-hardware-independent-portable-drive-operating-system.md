@@ -3,7 +3,7 @@ title: CHIPD-OS- Compute Hardware Independent Portable Drive Operating System
 date: 2025-12-12 09:02:26 +0530
 categories: [Blog, Medium]
 tags: [chipd, hardware]
-author: <author_id>
+author: anand
 mermaid: true
 image: /assets/images/cb4b15d5a887106b94fecc33b4702118.png
 excerpt: "### A Portable, External-SSD-supported Workstation for Developers, Hackers & Future-Focused Technologists..."

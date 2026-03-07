@@ -3,7 +3,7 @@ title: Wheels revolutionized how humans— and later robots — moved throug
 date: 2025-05-24 19:15:56 +0530
 categories: [Blog, Medium]
 tags: [robots, wheels]
-author: <author_id>
+author: anand
 mermaid: true
 image: /assets/images/a3616f4047115e968fb0d0d221407be7.png
 excerpt: "### **Isn’t it High Time for Robots without wheels?**..."

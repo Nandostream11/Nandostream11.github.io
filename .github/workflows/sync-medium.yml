@@ -54,6 +54,20 @@ jobs:
                   print(f"Failed to download {url}: {e}")
                   return "/assets/images/default.png"
 
+          def sanitize_filename(text):
+              """Convert title to ASCII-safe, normalized filename slug"""
+              # Remove non-ASCII characters
+              text = text.encode('ascii', 'ignore').decode('ascii')
+              # Remove special characters except spaces and hyphens
+              text = re.sub(r'[^\w\s-]', '', text).strip().lower()
+              # Replace spaces with hyphens
+              text = re.sub(r'\s+', '-', text)
+              # Replace multiple consecutive hyphens with single hyphen
+              text = re.sub(r'-+', '-', text)
+              # Remove leading/trailing hyphens
+              text = text.strip('-')
+              return text
+
           def get_top_tags(text, n=2):
               stopwords = set([
                   "the", "and", "to", "of", "in", "for", "a", "is", "on", "this", "with", "that", "as", "are",
@@ -67,7 +81,7 @@ jobs:
 
           for entry in feed.entries[:5]:
               title_text = entry.title
-              title_slug = re.sub(r'[^\w\s-]', '', title_text).strip().lower().replace(' ', '-')
+              title_slug = sanitize_filename(title_text)
               date_obj = datetime.datetime(*entry.published_parsed[:6])
               date_str = date_obj.strftime("%Y-%m-%d %H:%M:%S +0530")
               file_slug = date_obj.date().isoformat() + "-" + title_slug + ".md"
@@ -93,7 +107,7 @@ jobs:
                   "date": date_str,
                   "categories": "[Blog, Medium]",
                   "tags": f"[{', '.join(top_tags)}]",
-                  "author": "<author_id>",
+                  "author": "anand",
                   "mermaid": "true",
                   "image": local_images[0] if local_images else "/assets/images/default.png",
                   "excerpt": f"\"{markdown_body.strip().splitlines()[0][:200]}...\""

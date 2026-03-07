@@ -1,9 +1,9 @@
 ---
 title: AUG Design ESTIMA
-date: 2025-06-12 00:00:00 +0530
+date: 2025-07-12 00:00:00 +0530
 categories: [Projects, Machine Learning, Design]
 tags: [machine learning, Underwater glider, design]     # TAG names should always be lowercase
-author: <author_id>
+author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled

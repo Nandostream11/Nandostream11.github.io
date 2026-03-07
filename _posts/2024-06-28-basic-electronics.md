@@ -3,7 +3,7 @@ title: Basic Electronics & Microcontrollers
 date: 2024-06-28 00:00:00 +0530
 categories: [Blog, Electronics]
 tags: [esp now, robotics]     # TAG names should always be lowercase
-author: <author_id>
+author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled

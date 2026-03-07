@@ -3,7 +3,7 @@ title: American Sign Language(ASL) Recognition Using CNN
 date: 2024-11-21 00:00:00 +0530
 categories: [Projects, Image processing]
 tags: [computer vision, Deep Learning]     # TAG names should always be lowercase
-author: <author_id>
+author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled

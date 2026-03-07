@@ -3,11 +3,10 @@ title: CauESC- A Causal-Aware Model for Emotional Support Conversations
 date: 2024-10-24 00:00:00 +0530
 categories: [Projects, Machine Learning]
 tags: [machine learning, chat model]     # TAG names should always be lowercase
-author: <strikers> 
+author: strikers
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
 image: /assets/images/ml-archi.png    #to simply add an image
-description: There have been various types of ESC models which have been useful for consoling a distressed person but many current dialogue systems face significant challenges.
 excerpt: "A machine learning model for Emotional Support Conversation enhancement"
 ---
 

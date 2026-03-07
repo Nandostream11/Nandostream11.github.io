@@ -3,7 +3,7 @@ title: Voice Command Guided Mobile Robot
 date: 2023-10-25 00:00:00 +0530
 categories: [Projects, Robotics]
 tags: [mobile robots, esp now]     # TAG names should always be lowercase
-author: <author_id>
+author: anand
 mermaid: true
 image: /assets/images/MobileRobot.png
 excerpt: An Efficient Alternative for Operation in Hazardous Environments

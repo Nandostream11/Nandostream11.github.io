@@ -3,7 +3,7 @@ title: JACK- The Robot Dog (Quadrupedal Robot)
 date: 2025-04-25 00:00:00 +0530
 categories: [Projects, Robotics]
 tags: [quadruped, legged-robot]     # TAG names should always be lowercase
-author: <author_id>
+author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled

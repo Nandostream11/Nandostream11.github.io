@@ -3,7 +3,7 @@ title: Indian Robotics Startups in 2025- What’s Brewing in the Land of Innovat
 date: 2025-08-28 12:07:33 +0530
 categories: [Blog, Medium]
 tags: [robotics, india]
-author: <author_id>
+author: anand
 mermaid: true
 image: /assets/images/41211386e5f83f62ffe51135a343bbf5.png
 excerpt: "*By Anand Vardhan, Mechatronics Engineer & Robotics Innovator*..."
