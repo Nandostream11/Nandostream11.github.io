@@ -5,7 +5,7 @@ order: 6
 ---
 
 Hey! Thanks for visiting. 
-To find more details about my work and experience, please navigate the search bar on the left.
+To find more details about my work and experience, please use the navigation menu on the left or the search bar at the top.
 
 You can find my CV below for your reference.
 

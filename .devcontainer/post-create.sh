@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Fetch the chirpy-static-assets submodule (Font Awesome, web fonts, JS libs)
+# — without it, icons and other theme assets are missing from the served site.
+git submodule update --init --depth 1
+
 if [ -f package.json ]; then
   bash -i -c "nvm install --lts && nvm install-latest-npm"
   npm i

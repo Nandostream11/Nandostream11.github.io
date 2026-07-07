@@ -113,6 +113,10 @@ cdn:
 # the avatar on sidebar, support local or CORS resources
 avatar: assets/images/AV.jpeg
 
+# a larger photo shown in the homepage hero (independent of the sidebar avatar above).
+# support local or CORS resources; leave blank to fall back to `avatar`.
+hero_image: assets/images/hero.jpg
+
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
 social_preview_image: # string, local or CORS resources

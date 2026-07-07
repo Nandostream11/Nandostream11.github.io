@@ -1,0 +1,49 @@
+{% assign linkedin = site.data.contact | where: 'type', 'linkedin' | first %}
+{% assign hero_photo_src = site.hero_image | default: site.avatar %}
+
+<section class="hero">
+  <div class="hero-inner">
+    {%- if hero_photo_src != empty and hero_photo_src -%}
+      {%- capture hero_photo_url -%}
+        {% include media-url.html src=hero_photo_src %}
+      {%- endcapture -%}
+      <div class="hero-photo-wrap">
+        <img src="{{- hero_photo_url -}}" class="hero-photo" alt="{{ site.title }}" onerror="this.closest('.hero-photo-wrap').style.display='none'">
+      </div>
+    {%- endif -%}
+
+    <div class="hero-content">
+      <h1 class="hero-title">{{ site.title }}</h1>
+      <p class="hero-tagline">{{ site.tagline }}</p>
+
+      <div class="hero-cta">
+        <a href="{{ '/cv/' | relative_url }}" class="btn-hero btn-hero-primary">View CV</a>
+        <a href="{{ '/contact/' | relative_url }}" class="btn-hero btn-hero-secondary">Contact</a>
+
+        {% if site.github.username %}
+          <a
+            href="https://github.com/{{ site.github.username }}"
+            class="btn-hero-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        {% endif %}
+
+        {% if linkedin and linkedin.url %}
+          <a
+            href="{{ linkedin.url }}"
+            class="btn-hero-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

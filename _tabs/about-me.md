@@ -3,9 +3,7 @@
 title: About Me
 icon: fas fa-user
 # icon: fas fa-info-circle
-permalink: /
 order: 1
-# order: 4
 ---
 
 <!-- > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.

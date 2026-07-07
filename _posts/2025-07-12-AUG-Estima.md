@@ -15,7 +15,8 @@ image: /assets/images/glider.png    #to simply add an image
 # image:                        #for thumbnail
 #   path: /path/to/image
 #   alt: image alternative text
-excerpt: "ML-Guided Design Optimization for Autonomous Underwater Gliders(Slocum model with parameteric variability)"
+excerpt: "Isn't running CFD simulations every time a glider needs to optimize a certain performance aspect too hectic or just less on ROI?"
+featured: true
 ---
 
 PS: This is a project based on a problem that I came across while modelling the constraints, equations and analysing CFD simulations used for designing the body of a Glider during my Summer Internship at an Underwater Robotics based company. 

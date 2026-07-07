@@ -15,7 +15,8 @@ image: /assets/images/Jack(phase1).png    #to simply add an image
 # image:                        #for thumbnail
 #   path: /path/to/image
 #   alt: image alternative text
-excerpt: "A Robotics project that inspired me towrds unconventional robotics"
+excerpt: "A Robotics project that inspired me towards unconventional robotics"
+featured: true
 ---
 
 # Introduction
@@ -26,11 +27,10 @@ The primary motivation behind JACK was to gain hands-on experience in robotics b
 
 - Designing a robust mechanical structure inspired by modern quadrupeds.
 - Developing custom electronics for real-time control.
-- Develop the quadruped ronot for delivery on uneven terrain.
+- Develop the quadruped robot for delivery on uneven terrain.
 - Experimenting with gait patterns and navigation strategies. This project also served as a platform to apply theoretical knowledge from coursework to a real-world robotics challenge.
 
-This was a collaborative project that was executed in two different phases during my B.Tech at [IIT Bhilai](https://www.iitbhilai.ac.in/)- \
-This project was executed in two phases during my undergraduate journey:
+This was a collaborative project that was executed in two different phases during my B.Tech at [IIT Bhilai](https://www.iitbhilai.ac.in/):
 - Phase I: Design & development of the basic working prototype.
 - Phase II: Improvements for better navigation and modular control.
 
@@ -58,7 +58,7 @@ The leg kinematics were modeled in MATLAB Simulink using inverse kinematics solv
 _High level view of the Inverse kinematics for each leg_ 
 
  This robot was prepared as a part of a Robotics Fundamentals course curriculum and we reached some basic Low level embedded & MATLAB programmed stage.
-We first programmmed the three joints in a single Leg with the analogy of a robotic Arm with 3 servo motors. The leg kinematics was modelled with MATLAB Simulink using inverse solver. \
+We first programmed the three joints in a single Leg with the analogy of a robotic Arm with 3 servo motors. The leg kinematics was modelled with MATLAB Simulink using inverse solver. \
 <!-- ![4-Legged Robot](/assets/images/IKRobotleg.png){: w="600"  }
 _Simulink blocks for point-wise Inverse Kinematics to get joint angles for each point_   -->
 ![4-Legged Robot](/assets/images/Base-electronics(phase1).png){: w="500"  }
@@ -75,7 +75,7 @@ Such a mechanized quadrupedal robot can be leveraged to various applications lik
 
 ## **Phase II: Improvements & Advanced Features**
 
-The $2^{nd}$ Phase of this project was executed with two of my batchmates- [Dhananjay](https://www.linkedin.com/in/dhananjay-abbot-3ba776198), Harshit and a senior, [Vedhamsh Bode](https://www.linkedin.com/in/vedhamsh-bode-09a147229). 
+The 2nd Phase of this project was executed with two of my batchmates- [Dhananjay](https://www.linkedin.com/in/dhananjay-abbot-3ba776198), Harshit and a senior, [Vedhamsh Bode](https://www.linkedin.com/in/vedhamsh-bode-09a147229). 
 
 ![Quadruped Architecture](/assets/images/leg_modified.png){: w="550"  }
 _Modified Leg configuration in Phase 2_
@@ -117,7 +117,7 @@ _JACK TF vectors in Rviz view_ -->
 
 ### Motion & Navigation
 **Leg Trajectory planning & Locomotion**
- And this time we setup to the Leg testbench stand in RviZ to avoid the environmental faults and cautioning for our servos damage due to prolonged command or unconstrained valuesthat occur in hardware testing during algorithm development and testing
+ And this time we setup to the Leg testbench stand in RviZ to avoid the environmental faults and cautioning for our servos damage due to prolonged command or unconstrained values that occur in hardware testing during algorithm development and testing
 
 ![Testbench setup to run tests for the leg motion and trajectory following](/assets/images/trajectory_control_setup.png){: w="350"  }
 _Simulation Testbench in Rviz for testing foot trajectory following_
@@ -180,7 +180,7 @@ The Github Repo can be found here: [Quadrupedal-Robot-Jack](https://github.com/N
 
 **References & Resources:**
 - [MATLAB Simulink Documentation](https://www.mathworks.com/products/simulink.html)
-- [ROS Doumentation](https://docs.ros.org/)
+- [ROS Documentation](https://docs.ros.org/)
 - [Unitree Robotics](https://github.com/unitreerobotics)
 
 <!-- Pseudocode of Updated Gait Planner:

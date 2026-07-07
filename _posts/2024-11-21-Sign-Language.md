@@ -16,6 +16,7 @@ image: /assets/images/asl.png    #to simply add an image
 #   path: /path/to/image
 #   alt: image alternative text
 excerpt: "*Breaking communication barriers with deep learning.*"
+featured: true
 ---
 
 

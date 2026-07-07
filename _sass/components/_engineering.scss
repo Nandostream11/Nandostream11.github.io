@@ -1,0 +1,248 @@
+@use 'abstracts/mixins' as mx;
+
+$mono-font: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+
+/* Engineering accent + grid-line custom properties, layered on top of the
+   existing --bs-theme-driven variables rather than replacing them. */
+:root[data-bs-theme='light'] {
+  --eng-accent: #0e7c86;
+  --eng-grid-line: rgb(20 20 20 / 6%);
+}
+
+:root[data-bs-theme='dark'] {
+  --eng-accent: #5fd1dd;
+  --eng-grid-line: rgb(255 255 255 / 6%);
+}
+
+:root:not([data-bs-theme]) {
+  @include mx.color-scheme(light) {
+    --eng-accent: #0e7c86;
+    --eng-grid-line: rgb(20 20 20 / 6%);
+  }
+
+  @include mx.color-scheme(dark) {
+    --eng-accent: #5fd1dd;
+    --eng-grid-line: rgb(255 255 255 / 6%);
+  }
+}
+
+/* Monospace treatment for headings/labels — technical/engineering identity */
+.hero-title,
+.hero-tagline,
+h1.dynamic-title,
+.post-tag,
+.featured-card h3,
+#featured-projects .mono-heading {
+  font-family: $mono-font;
+}
+
+/* Hero section */
+.hero {
+  padding: 4rem 1rem 3rem;
+  background-image:
+    repeating-linear-gradient(0deg, var(--eng-grid-line) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, var(--eng-grid-line) 0 1px, transparent 1px 32px);
+}
+
+.hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+}
+
+.hero-content {
+  width: 100%;
+}
+
+/* The bigger photo replacing the small profile-picture-style avatar, stacked
+   above the name/tagline. The box uses hero.jpg's own native ratio (1280x1046)
+   rather than an arbitrary crop like 16:9, so object-fit: cover has virtually
+   nothing to crop — it just guarantees the photo fully fills its box at any
+   viewport width instead of leaving rounding-error gaps. */
+.hero-photo-wrap {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1280 / 1046;
+
+  .preview-img {
+    aspect-ratio: auto;
+    height: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--text-muted-color);
+  margin-bottom: 1.75rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn-hero {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid var(--eng-accent);
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-hero-primary {
+  background: var(--eng-accent);
+  color: var(--main-bg);
+
+  &:hover {
+    opacity: 0.85;
+    color: var(--main-bg);
+  }
+}
+
+.btn-hero-secondary {
+  background: transparent;
+  color: var(--eng-accent);
+
+  &:hover {
+    background: var(--eng-accent);
+    color: var(--main-bg);
+  }
+}
+
+.btn-hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--eng-accent);
+  color: var(--eng-accent);
+
+  &:hover {
+    background: var(--eng-accent);
+    color: var(--main-bg);
+    text-decoration: none;
+  }
+}
+
+/* Featured Projects */
+.featured-projects {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+#featured-projects .mono-heading {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--eng-accent);
+  display: inline-block;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-card {
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--eng-accent);
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    margin: 0.75rem 1rem 0.25rem;
+
+    a {
+      color: var(--heading-color);
+    }
+  }
+
+  p {
+    margin: 0 1rem 0.5rem;
+    color: var(--text-muted-color);
+    font-size: 0.92rem;
+  }
+
+  .post-meta {
+    margin: 0 1rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Previously-unstyled thumbnail wrapper shared by Projects/Blog/Featured cards.
+   No fixed aspect-ratio/crop here — each photo's own proportions differ
+   (portrait-ish screenshots vs. wide renders), so the container just fills
+   the card width and the image scales to its own natural height.
+
+   On `layout: home`, the theme's own refactor-content.html auto-wraps every
+   <img> in a `.preview-img` div with a fixed 40/21 aspect-ratio + object-fit:
+   cover (see gem _sass/base/_base.scss) — that wrapper's higher specificity
+   otherwise wins over .post-img alone, so it's reset here too. */
+.post-img-cnt {
+  width: 100%;
+  overflow: hidden;
+  background: var(--img-bg);
+
+  .preview-img {
+    aspect-ratio: auto;
+    height: auto;
+
+    img {
+      height: auto;
+      object-fit: unset;
+    }
+  }
+}
+
+.post-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.view-all-link {
+  color: var(--eng-accent);
+  font-weight: 600;
+}
