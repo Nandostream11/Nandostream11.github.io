@@ -242,5 +242,7 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-plugins:
-  - jekyll-feed
+# NOTE: don't add jekyll-feed here — the Chirpy theme ships its own
+# assets/feed.xml template, and running both produces a destination
+# conflict on _site/feed.xml.
+

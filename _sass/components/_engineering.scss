@@ -37,6 +37,28 @@ h1.dynamic-title,
 }
 
 /* Hero section */
+
+/* Chirpy forces #main-wrapper > .container to min-height: 100vh so the
+   footer sticks to the viewport bottom on normal (sidebar + long-content)
+   pages. The homepage's hero + featured-projects content is usually much
+   shorter than a full viewport, so that rule was stretching the row and
+   leaving a large dead gap between the content and the footer. Scope the
+   override to pages that render the hero so other pages keep the sticky
+   footer behavior. */
+body:has(.hero) #main-wrapper > .container {
+  min-height: auto;
+}
+
+/* The theme's refactor-content.html wraps every home-layout <img> in a
+   `.shimmer` loading cover, but the removal script (img-loading.js) only
+   binds to `article img` — the hero/featured sections render outside an
+   <article>, so the wave animation never stops. Disable the overlay here;
+   the static --img-bg placeholder background is kept. */
+.hero .shimmer::before,
+.featured-projects .shimmer::before {
+  content: none;
+}
+
 .hero {
   padding: 4rem 1rem 3rem;
   background-image:

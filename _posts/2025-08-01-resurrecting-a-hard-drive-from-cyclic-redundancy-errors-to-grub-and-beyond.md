@@ -141,4 +141,3 @@ If you’re in a similar situation:
 
 Thanks for reading! If you’ve tried reviving a hard disk like this, or used Linux to fix what Windows couldn’t, I’d love to hear your stories. Drop a comment — or a cautionary tale.
 
-![](/assets/images/9e3c4412191bc20d62b341a36341ea21.png)

@@ -143,4 +143,3 @@ If you’re working in underwater autonomy, marine AI, or embedded perception, I
 
 *Author:* Anand Vardhan (anandvk113@gmail.com)
 
-![](/assets/images/d10a5c48fe9534974026c014cd6d845e.png)

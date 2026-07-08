@@ -125,4 +125,3 @@ Whether you’re building, researching, or just curious, this is the moment to r
 
 Share your thoughts and let’s continue to push the boundaries of robotic mobility beyond all limitations!
 
-![](/assets/images/ddde18db3f34bf60e646be7831be6205.png)

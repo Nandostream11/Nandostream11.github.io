@@ -140,4 +140,3 @@ References:
 * Kongsberg. (202x). \*AUV Technology Overview\*.
 * SAAB. (202x). \*Autonomous Underwater Vehicle Solutions\*.
 
-![](/assets/images/ce0811133660e9144464edde1b5aac20.png)

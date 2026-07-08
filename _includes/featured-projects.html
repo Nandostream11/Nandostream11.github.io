@@ -10,7 +10,7 @@
           <div class="post-img-cnt">
             <a href="{{ post.url | relative_url }}">
               {% if post.image %}
-                <img src="{{ post.image }}" alt="{{ post.title }} image" class="post-img">
+                <img src="{{ post.image }}" alt="{{ post.title }} image" class="post-img" loading="lazy" decoding="async">
               {% endif %}
             </a>
           </div>

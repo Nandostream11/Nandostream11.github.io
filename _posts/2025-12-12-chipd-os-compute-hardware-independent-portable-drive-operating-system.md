@@ -402,4 +402,3 @@ When your OS lives on your SSD, **your workflow becomes truly mobile**.
 Welcome to **Compute Hardware Independence**.  
  Welcome to **CHIPD’OS**.
 
-![](/assets/images/3cff276ba49439e7956d0dc4a17a93bf.png)

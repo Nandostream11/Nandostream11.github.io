@@ -93,9 +93,15 @@ jobs:
               content_html = entry.content[0].value
               soup = BeautifulSoup(content_html, "html.parser")
 
-              image_urls = [img.get("src") for img in soup.find_all("img") if "medium.com" in (img.get("src") or "")]
-              local_images = [download_image(url) for url in image_urls if url]
-              for img, new_src in zip(soup.find_all("img"), local_images):
+              # Drop Medium's 1x1 stat/tracking pixels so they never reach the repo
+              for img in soup.find_all("img"):
+                  src = img.get("src") or ""
+                  if "/_/stat" in src or "medium.com/_/" in src:
+                      img.decompose()
+
+              post_imgs = [img for img in soup.find_all("img") if "medium.com" in (img.get("src") or "")]
+              local_images = [download_image(img.get("src")) for img in post_imgs]
+              for img, new_src in zip(post_imgs, local_images):
                   img["src"] = new_src
 
               markdown_body = md(str(soup))

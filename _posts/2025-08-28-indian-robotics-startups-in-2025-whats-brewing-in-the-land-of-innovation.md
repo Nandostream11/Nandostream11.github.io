@@ -133,4 +133,3 @@ It’ll be because:
 India’s robotics ecosystem isn’t following the trend.  
  **It’s quietly rewriting it.**
 
-![](/assets/images/41211386e5f83f62ffe51135a343bbf5.png)
