@@ -17,14 +17,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: pip install feedparser markdownify requests beautifulsoup4
+        run: pip install feedparser markdownify requests beautifulsoup4 pyyaml
 
       - name: Parse RSS, convert new posts only, download images
         run: |
           python <<EOF
           import feedparser
           from markdownify import markdownify as md
-          import os, re, requests, hashlib
+          import os, re, requests, hashlib, yaml
           from collections import Counter
           import datetime
           from bs4 import BeautifulSoup
@@ -108,21 +108,27 @@ jobs:
 
               top_tags = get_top_tags(markdown_body, n=2)
 
+              # Plain-text teaser from the rendered content, not raw markdown
+              plain_text = " ".join(soup.get_text(" ", strip=True).split())
+              excerpt_text = plain_text[:200] + ("..." if len(plain_text) > 200 else "")
+
               frontmatter = {
                   "title": title_text,
                   "date": date_str,
-                  "categories": "[Blog, Medium]",
-                  "tags": f"[{', '.join(top_tags)}]",
+                  "categories": ["Blog", "Medium"],
+                  "tags": top_tags,
                   "author": "anand",
-                  "mermaid": "true",
                   "image": local_images[0] if local_images else "/assets/images/default.png",
-                  "excerpt": f"\"{markdown_body.strip().splitlines()[0][:200]}...\""
+                  "excerpt": excerpt_text,
               }
+
+              # Only load the mermaid library when the post has a diagram
+              if "```mermaid" in markdown_body:
+                  frontmatter["mermaid"] = True
 
               with open(f"_posts/{file_slug}", "w", encoding="utf-8") as f:
                   f.write("---\n")
-                  for key, value in frontmatter.items():
-                      f.write(f"{key}: {value}\n")
+                  f.write(yaml.safe_dump(frontmatter, allow_unicode=True, sort_keys=False))
                   f.write("---\n\n")
                   f.write(markdown_body)
           EOF

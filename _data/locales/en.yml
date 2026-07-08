@@ -81,3 +81,13 @@ categories:
   post_measure:
     singular: post
     plural: posts
+
+# Date formats (v7 theme keys — this local file overrides the gem's en.yml,
+# so datetime.html falls back to 25/04/2025-style dates without this block)
+df:
+  post:
+    strftime: "%b %e, %Y"
+    dayjs: "ll"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"

@@ -1,26 +1,11 @@
 <!--
-  Date format snippet
-  See: /assets/js/_utils/timeage.js
+  Legacy alias kept for the custom home/projects/blog listings.
+
+  This used to be a Chirpy v4 snippet that relied on a `timeage.js` helper
+  removed in v5+; without it the raw ISO date in <i class="unloaded"> was
+  rendered visibly next to every card date. Delegate to the theme's own
+  datetime.html instead, which formats via _data/locales df settings and is
+  kept in sync by the theme's locale-datetime.js.
 -->
-
-{% assign tooltip_df = site.data.date_format.tooltip | default: '%a, %b %e, %Y, %l:%M %p %z' %}
-{% assign post_long_df = site.data.date_format.post.long | default: '%b %e, %Y' %}
-{% assign post_short_df = site.data.date_format.post.short | default: '%b %e' %}
-
-<span class="timeago {% if include.class %}{{ include.class }}{% endif %}" {% if include.tooltip %}
-    data-toggle="tooltip" data-placement="bottom" title="{{ include.date | date: tooltip_df }}" {% endif %} {% if
-    include.prefix %}prefix="{{ include.prefix }} " {% endif%} {% if include.prep %}prep="{{ include.prep }}" {% endif
-    %}>
-
-    {% assign this_year = site.time | date: "%Y" %}
-    {% assign post_year = include.date | date: "%Y" %}
-
-    {% if post_year == this_year %}
-    {{ include.date | date: post_short_df }}
-    {% else %}
-    {{ include.date | date: post_long_df }}
-    {% endif %}
-
-    <i class="unloaded">{{ include.date | date_to_xmlschema }}</i>
-
-</span>
+{% include lang.html %}
+{% include datetime.html date=include.date tooltip=include.tooltip class=include.class lang=lang %}

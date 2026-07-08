@@ -258,6 +258,30 @@ body:has(.hero) #main-wrapper > .container {
   }
 }
 
+/* Featured cards only: a fixed 3/2 thumbnail box. Reserves the image's
+   space before it loads (no layout shift) and keeps the grid rows even —
+   the current featured photos range from ~1.26 to ~1.83 aspect, so 3/2 is
+   the least-cropping common frame. */
+.featured-card .post-img-cnt {
+  aspect-ratio: 3 / 2;
+
+  a,
+  .preview-img {
+    display: block;
+    height: 100%;
+  }
+
+  .preview-img {
+    aspect-ratio: auto;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .post-img {
   display: block;
   width: 100%;

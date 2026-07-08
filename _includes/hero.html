@@ -8,7 +8,8 @@
         {% include media-url.html src=hero_photo_src %}
       {%- endcapture -%}
       <div class="hero-photo-wrap">
-        <img src="{{- hero_photo_url -}}" class="hero-photo" alt="{{ site.title }}" fetchpriority="high" decoding="async" onerror="this.closest('.hero-photo-wrap').style.display='none'">
+        {%- comment -%} width/height match assets/images/hero.jpg; update if the photo changes {%- endcomment -%}
+        <img src="{{- hero_photo_url -}}" class="hero-photo" alt="{{ site.title }}" width="1280" height="1046" fetchpriority="high" decoding="async" onerror="this.closest('.hero-photo-wrap').style.display='none'">
       </div>
     {%- endif -%}
 
