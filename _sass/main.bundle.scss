@@ -1,0 +1,8 @@
+/* Production entrypoint. Mirrors the gem's main.bundle.scss — it must exist
+   locally because assets/css/jekyll-theme-chirpy.scss loads `main.bundle`
+   when JEKYLL_ENV=production; without this local copy, Sass resolves the
+   gem's bundle whose `@use 'main'` points at the gem's own main.scss,
+   silently dropping every custom style (see local main.scss) from the
+   deployed site while dev builds (`@use 'main'`) look correct. */
+@use 'vendors/bootstrap';
+@use 'main';
