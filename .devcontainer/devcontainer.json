@@ -22,7 +22,13 @@
         "stylelint.vscode-stylelint",
         "yzhang.markdown-all-in-one",
         // Git
-        "mhutchie.git-graph"
+        "mhutchie.git-graph",
+        // Ruby language server
+        "Shopify.ruby-lsp",
+        // JS linting
+        "dbaeumer.vscode-eslint",
+        // AI assistant
+        "anthropic.claude-code"
       ]
     }
   }

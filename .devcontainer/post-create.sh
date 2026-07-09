@@ -4,6 +4,13 @@
 # — without it, icons and other theme assets are missing from the served site.
 git submodule update --init --depth 1
 
+# Install site gems so `bundle exec jekyll serve` works right away
+bundle install
+
+# Image optimization tools (used to keep assets/images small)
+sudo apt-get update -qq
+sudo apt-get install -y -qq imagemagick pngquant jpegoptim
+
 if [ -f package.json ]; then
   bash -i -c "nvm install --lts && nvm install-latest-npm"
   npm i
