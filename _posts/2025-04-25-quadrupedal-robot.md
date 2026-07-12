@@ -59,8 +59,7 @@ _High level view of the Inverse kinematics for each leg_
 
  This robot was prepared as a part of a Robotics Fundamentals course curriculum and we reached some basic Low level embedded & MATLAB programmed stage.
 We first programmed the three joints in a single Leg with the analogy of a robotic Arm with 3 servo motors. The leg kinematics was modelled with MATLAB Simulink using inverse solver. \
-<!-- ![4-Legged Robot](/assets/images/IKRobotleg.png){: w="600"  }
-_Simulink blocks for point-wise Inverse Kinematics to get joint angles for each point_   -->
+{% include embed/video.html src='/assets/videos/quadruped/singleleg-ik-sim.mp4' title='Single-leg inverse kinematics simulation, 3-DOF arm analogy' autoplay=true loop=true muted=true %}
 ![4-Legged Robot](/assets/images/Base-electronics(phase1).png){: w="500"  }
 _Top view of the base electronics_ 
 
@@ -122,6 +121,8 @@ _JACK TF vectors in Rviz view_ -->
 ![Testbench setup to run tests for the leg motion and trajectory following](/assets/images/trajectory_control_setup.png){: w="350"  }
 _Simulation Testbench in Rviz for testing foot trajectory following_
 
+{% include embed/video.html src='/assets/videos/quadruped/rviz-trajectory-sim.mp4' title='RViz simulation following the planned Bezier foot trajectory' autoplay=true loop=true muted=true %}
+
 For walking, two different phases are needed from the trajectory of leg foot(end-effector)- Swing phase and stance phase(the two main parts of a gait cycle for the complete sequence of a anatomy(dog)). \
 Stance Phase- The period when the foot is on the ground, absorbing and supporting body weight. (ts=0.6*T)
 - Begins with Initial Contact with ground. 
@@ -156,6 +157,8 @@ _The JACK in The Gazebo Sim_
 Initial walking tests on tiled and moderately uneven outdoor surfaces showed:
 - Reduced leg drag and fewer missed steps compared to earlier versions.
 - More controllability with the onboard Kinematics solver stack and a well defined High level layer.
+
+{% include embed/video.html src='/assets/videos/quadruped/outdoor-field-test.mp4' title='Outdoor field test on uneven grass terrain' autoplay=true loop=true muted=true %}
 <!-- - 33% improved stability with feedback-integrated torso adjustments. -->
 <!-- - The robot could navigate around low-height obstacles (<7 cm) using 2D LiDAR scans. -->
 
