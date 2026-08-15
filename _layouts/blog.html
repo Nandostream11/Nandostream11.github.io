@@ -19,11 +19,12 @@ layout: default
       </h2>
 
       <div class="post-content">
-        {% if post.image %}
-          <div class="post-img-cnt">
-            <a href="{{ post.url | relative_url }}" class="post-img-link d-block"><img src="{{ post.image }}" alt="{{ post.title }} preview" class="post-img" loading="lazy" decoding="async"></a>
-          </div>
-        {% endif %}
+        {% assign blog_cover = post.image | default: '/assets/images/default.png' %}
+        <div class="post-img-cnt">
+          <a href="{{ post.url | relative_url }}" class="post-img-link d-block">
+            <img src="{{ blog_cover }}" alt="{{ post.title }} preview" class="post-img" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/images/default.png';">
+          </a>
+        </div>
         <p>
           {{ post.excerpt | markdownify | strip_html | truncate: 200 }}
         </p>

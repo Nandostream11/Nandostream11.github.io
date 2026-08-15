@@ -6,24 +6,40 @@ icon: fas fa-user
 order: 1
 ---
 
-<!-- > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip } -->
+### Hi there! I'm Anand Vardhan.
 
-<!-- <div style="text-align: right">
-    <img align="left" src="/assets/images/me1_border.png" alt="drawing" width="400"/>
-</div> -->
+I am a robotics engineer and researcher with a focus on **intelligent systems, kinematics, and perception**. My work spans the complete lifecycle of robotic platforms—from mechanical design and custom embedded electronics to high-level motion planning and autonomous swarm coordination.
 
-<!-- ![](/assets/aboutme.jpg) -->
+I thrive at the intersection of hardware and software, bridging physical mechanical constraints, custom microcontroller firmware, and algorithmic control through frameworks like ROS 2, PyTorch, and Gazebo.
 
-<span style="font-size:1.5em;">Hi there! This is Anand.</span>
+---
 
-I am a passionate robotics engineer with a strong inclination toward intelligent systems, design, and perception. My experience spans the development of legged and mobile robots, focusing on robust systems.
+### Core Engineering Focus
 
-I thrive at the intersection of hardware and software, working to bridge mechanical design, electronics, and algorithmic control through software frameworks. I am always open to collaboration and discussions that push the boundaries of autonomous systems, and I look forward to contributing meaningfully to the future of robotics.
+<div class="project-tags d-flex flex-wrap gap-2 mb-4">
+  <span class="project-tag-pill"><i class="fas fa-robot me-1"></i> Legged Locomotion & Inverse Kinematics</span>
+  <span class="project-tag-pill"><i class="fas fa-network-wired me-1"></i> Swarm & Multi-Agent AMRs</span>
+  <span class="project-tag-pill"><i class="fas fa-water me-1"></i> Marine & Underwater Robotics</span>
+  <span class="project-tag-pill"><i class="fas fa-eye me-1"></i> Computer Vision & Perception</span>
+  <span class="project-tag-pill"><i class="fas fa-microchip me-1"></i> Embedded Systems & ESP-NOW</span>
+</div>
 
-## Contact
+---
+
+### Technical Tooling & Stack
+
+| Domain | Key Tools & Frameworks |
+| :--- | :--- |
+| **Robotics & Middleware** | ROS 2 (Humble), Nav2, Gazebo, RViz, MATLAB / Simulink |
+| **Perception & AI** | PyTorch, YOLOv8, OpenCV, Scikit-learn, Hugging Face Transformers |
+| **Embedded & Firmware** | C/C++, Arduino, ESP-IDF, ESP-NOW, FreeRTOS, Raspberry Pi 4B |
+| **Mechanical & Hardware** | Fusion 360, Analytical IK Modeling, Custom PCB Prototyping |
+
+---
+
+### Inquiries & Collaboration
 
 - **Personal Email:** [anandvk113@gmail.com](mailto:anandvk113@gmail.com)
 - **Institute Email:** [anandv@iitbhilai.ac.in](mailto:anandv@iitbhilai.ac.in)
+- **Direct Links:** [Curriculum Vitae]({{ '/cv/' | relative_url }}) &middot; [Projects Gallery]({{ '/projects/' | relative_url }}) &middot; [Contact Page]({{ '/contact/' | relative_url }})
 
-*Social profiles and links can also be found in the sidebar footer and on the [Contact]({{ '/contact/' | relative_url }}) page.*
