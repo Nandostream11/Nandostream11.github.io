@@ -5,17 +5,11 @@ categories: [Projects, Machine Learning, Design]
 tags: [machine learning, Underwater glider, design]     # TAG names should always be lowercase
 author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
-mermaid: true       #diagram gen tool
-math: true          #MathJax enabled
-image: /assets/images/glider.png    #to simply add an image
-# description: This is a project based on a problem that I came across while modelling the constraints, equations and analysing CFD simulations used for designing the body of a Gliderduring my Summer Internship at an Underwater Robotics based company. Operation-selective Design Parameters optimization for Underwater Gliders- AUG Design ESTIMA
-# toc: false        #to turn off table of contents on right side for this post
-# comments: false      #to turn off comments for this post
-# pin: true             #to pin to top of homepage
-# image:                        #for thumbnail
-#   path: /path/to/image
-#   alt: image alternative text
-excerpt: "Isn't running CFD simulations every time a glider needs to optimize a certain performance aspect too hectic or just less on ROI?"
+mermaid: true
+math: true
+image: /assets/images/glider.png
+description: "Surrogate machine learning model for rapid inverse hydrodynamic and parametric design estimation of autonomous underwater gliders (AUGs)."
+excerpt: "Surrogate ML framework for fast hydrodynamic parameter optimization of autonomous underwater gliders."
 featured: true
 ---
 
@@ -80,6 +74,22 @@ To build a machine learning pipeline that predicts hydrodynamic performance metr
 ---
 
 ## Technical Methodology
+
+```mermaid
+flowchart LR
+    subgraph Input["Design Parameters"]
+        A[Buoyancy Engine Frequency] --> C[AUG Physics Simulator]
+        B[Wing Area & Angle of Attack] --> C
+    end
+    subgraph Data["Simulation & Scoring"]
+        C --> D[Trajectory & Glide Ratio Metrics]
+        D --> E[Multi-Objective Fitness Evaluator]
+    end
+    subgraph Surrogate["Surrogate Estimator"]
+        E --> F[Random Forest Regressor]
+        F --> G[Rapid Parameter Recommendations]
+    end
+```
 
 ### 1. Simulation Ground Truth
 

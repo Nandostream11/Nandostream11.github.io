@@ -3,11 +3,12 @@ title: CauESC- A Causal-Aware Model for Emotional Support Conversations
 date: 2024-10-24 00:00:00 +0530
 categories: [Projects, Machine Learning]
 tags: [machine learning, chat model]     # TAG names should always be lowercase
-author: strikers
-mermaid: true       #diagram gen tool
-math: true          #MathJax enabled
-image: /assets/images/ml-archi.png    #to simply add an image
-excerpt: "A machine learning model for Emotional Support Conversation enhancement"
+author: anand
+mermaid: true
+math: true
+image: /assets/images/ml-archi.png
+description: "Causal-aware emotional support dialogue architecture leveraging COMET commonsense knowledge fusion and multi-strategy empathetic response generation."
+excerpt: "Transformer-based causal-aware dialogue model leveraging commonsense reasoning for empathetic response generation."
 ---
 
 <div class="project-specs">
@@ -60,6 +61,16 @@ These shortcomings can lead to user frustration, undermining the very purpose of
 
 ## Our Approach: CauESC  
 CauESC builds upon prior research while introducing novel elements to address these challenges:  
+
+```mermaid
+flowchart TD
+    A[User Dialogue Context] --> B[Cause-Aware Transformer Encoder]
+    A --> C[COMET Commonsense Reasoner]
+    C -->|Intra/Inter-Effects Inferences| D[Causal Knowledge Fusion]
+    B --> D
+    D --> E[Multi-Strategy Response Planner]
+    E --> F[Empathetic & Coherent Output]
+```
 
 ![CauESC architecture](/assets/images/ml-archi.png){: w="500" }
 *CauESC architecture*

@@ -6,7 +6,8 @@ tags: [mobile robots, esp now]     # TAG names should always be lowercase
 author: anand
 mermaid: true
 image: /assets/images/MobileRobot.png
-excerpt: An Efficient Alternative for Operation in Hazardous Environments
+description: "Voice-controlled differential drive mobile robot utilizing offline speech recognition and peer-to-peer ESP-NOW protocol for hazardous environment exploration."
+excerpt: "Voice-controlled differential drive mobile robot using offline speech recognition and peer-to-peer ESP-NOW communication."
 ---
 
 <div class="project-specs">
@@ -65,6 +66,22 @@ To design and develop a mobile robot that:
 ## System Overview
 
 ### Architecture
+
+```mermaid
+flowchart LR
+    subgraph Transmitter["Operator Unit"]
+        A[Speech Recognition Mic] --> B[Voice Command Parser]
+        B --> C[ESP32 Transmitter]
+    end
+    subgraph Wireless["Low-Latency Link"]
+        C -->|ESP-NOW Peer-to-Peer Protocol| D[ESP32 Onboard Receiver]
+    end
+    subgraph Vehicle["Mobile Platform"]
+        D --> E[L298N Motor Driver]
+        F[Ultrasonic Sensor Array] -. Safety Distance .-> D
+        E --> G[Differential Drive Motors]
+    end
+```
 
 The robot comprises the following key modules:
 - **Speech Recognition Module (Transmitter Unit)**: A dedicated speech recognition module processes spoken commands locally (e.g., “forward”, “left”) and passes recognized strings to the ESP32 transmitter.

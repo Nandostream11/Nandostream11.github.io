@@ -5,17 +5,11 @@ categories: [Projects, Image processing]
 tags: [computer vision, Deep Learning]     # TAG names should always be lowercase
 author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
-mermaid: true       #diagram gen tool
-math: true          #MathJax enabled
-image: /assets/images/asl.png    #to simply add an image
-# description: Short summary of the post.
-# toc: false        #to turn off table of contents on right side for this post
-# comments: false      #to turn off comments for this post
-# pin: true             #to pin to top of homepage
-# image:                        #for thumbnail
-#   path: /path/to/image
-#   alt: image alternative text
-excerpt: "*Breaking communication barriers with deep learning.*"
+mermaid: true
+math: true
+image: /assets/images/asl.png
+description: "Deep Convolutional Neural Network (CNN) for American Sign Language (ASL) static gesture recognition across 36 classes with 98.4% validation accuracy."
+excerpt: "Deep Convolutional Neural Network (CNN) for American Sign Language (ASL) static gesture recognition across 36 alphanumeric classes."
 featured: true
 ---
 
@@ -84,6 +78,17 @@ By replacing an earlier & less effective **landmark detection** approach with CN
 ---
 
 ## Model Architecture
+
+```mermaid
+flowchart LR
+    A[Input Image 200x200x3] --> B[ConvBlock 1: 2x Conv + ReLU + MaxPool]
+    B --> C[ConvBlock 2: 2x Conv + ReLU + MaxPool]
+    C --> D[ConvBlock 3: 2x Conv + ReLU + MaxPool]
+    D --> E[Flatten & Dropout 0.4]
+    E --> F[Dense 512 + Dense 128]
+    F --> G[Softmax 36 ASL Classes]
+```
+
 ![CNN Architecture](/assets/images/cnn_architecture.png){: w="400"  }
 *A Sequential CNN with three convolutional blocks, regularization, and fully connected layers.*
 

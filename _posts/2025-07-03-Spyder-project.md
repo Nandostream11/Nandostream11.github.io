@@ -4,11 +4,11 @@ date: 2025-07-03 00:00:00 +0530
 categories: [Projects, Internship]
 tags: [robotics, embedded]     # TAG names should always be lowercase
 author: anand
-mermaid: true       #diagram gen tool
-math: true          #MathJax enabled
-image: /assets/images/spider.jpg    #to simply add an image
-
-excerpt: "A mini-project at a Summer Internship"
+mermaid: true
+math: true
+image: /assets/images/spider.jpg
+description: "Design and embedded wireless control for a 12-DOF quadruped robot spider using Arduino, HC-05 Bluetooth UART, and an Android telemetry app."
+excerpt: "Design and embedded control for a 12-DOF quadruped robot spider using Arduino and Bluetooth UART."
 ---
 
 <div class="project-specs">
@@ -67,6 +67,20 @@ _Spyder model_
 ---
 
 ## Bluetooth Communication Architecture
+
+```mermaid
+flowchart LR
+    subgraph UI["Mobile Controller"]
+        A[Android MIT App] -->|Bluetooth SPP Packet| B[HC-05 Wireless Module]
+    end
+    subgraph MCU["Embedded Processing"]
+        B -->|UART 9600 Baud| C[Arduino MCU SoftwareSerial]
+        C -->|Command Parser| D[Gait State Engine]
+    end
+    subgraph Output["Actuation"]
+        D -->|12x PWM Channels| E[12x SG90 Micro Servos]
+    end
+```
 
 ### Module: HC-05 Bluetooth Serial Module
 

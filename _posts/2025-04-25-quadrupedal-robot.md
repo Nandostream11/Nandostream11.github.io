@@ -5,17 +5,12 @@ categories: [Projects, Robotics]
 tags: [quadruped, legged-robot]     # TAG names should always be lowercase
 author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
-mermaid: true       #diagram gen tool
-math: true          #MathJax enabled
-image: /assets/images/Jack(phase1).png    #to simply add an image
-# description: A compact, open-source quadrupedal robot designed and built as a collaborative academic project, featuring custom electronics, mechanical design, and autonomous navigation capabilities.
-# toc: false        #to turn off table of contents on right side for this post
-# comments: false      #to turn off comments for this post
-# pin: true             #to pin to top of homepage
-# image:                        #for thumbnail
-#   path: /path/to/image
-#   alt: image alternative text
-excerpt: "A Robotics project that inspired me towards unconventional robotics"
+mermaid: true
+math: true
+image: /assets/images/Jack(phase1).png
+description: "Design, analytical kinematics modeling, custom embedded electronics, and inverse kinematics control for JACK, a 12-DOF quadrupedal robot."
+excerpt: "Design, analytical kinematics modeling, and control system for an open-source 12-DOF quadrupedal robot."
+featured: true
 ---
 
 <div class="project-specs">
@@ -121,6 +116,23 @@ In the second phase, the robot’s torso structure was replaced with a metallic 
 
 ![Quadruped Architecture](/assets/images/Component_architecture.png){: w="550"  }
 _HL Architecture of the Robot Dog_ 
+
+```mermaid
+flowchart LR
+    subgraph Remote["High-Level Planning"]
+        A[Teleop / Path Planner] --> B[Gait Pattern Generator]
+    end
+    subgraph Onboard["Onboard Processing (RPi / MCU)"]
+        B --> C[Analytical Inverse Kinematics]
+        C --> D[PWM Actuator Driver]
+    end
+    subgraph Hardware["Mechanical & Sensors"]
+        D --> E[12x Servo Actuators]
+        E --> F[Robot Kinematic State]
+        F --> G[BNO055 IMU & 2D LiDAR]
+    end
+    G -. Closed-Loop Feedback .-> B
+```
 
 **Remote Debugging & Operation (via Raspberry Pi):** Our quadruped robot is equipped with a Raspberry Pi 4B as its central processing unit, enabling remote access over Wi-Fi or SSH. This setup allows us to:
 - Monitor sensor data in real-time.
