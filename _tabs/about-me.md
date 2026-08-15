@@ -17,13 +17,13 @@ order: 1
 
 <span style="font-size:1.5em;">Hi there! This is Anand.</span>
 
-I am a passionate robotics engineer with a strong inclination toward intelligent systems, design, and perception. My experience spans the development of legged and mobile robots, focusing on robust systems. 
+I am a passionate robotics engineer with a strong inclination toward intelligent systems, design, and perception. My experience spans the development of legged and mobile robots, focusing on robust systems.
 
 I thrive at the intersection of hardware and software, working to bridge mechanical design, electronics, and algorithmic control through software frameworks. I am always open to collaboration and discussions that push the boundaries of autonomous systems, and I look forward to contributing meaningfully to the future of robotics.
 
-# Contact
+## Contact
 
-**Personal email:** [anandvk113@gmail.com](mailto:anandvk113@gmail.com) \\
-**Institute email:** [anandv@iitbhilai.ac.in](mailto:anandv@iitbhilai.ac.in) \\
-<!-- **Phone:** +1 (412) 224-0713 \\ -->
-** All other socials can be found at the bottom left of the page.
+- **Personal Email:** [anandvk113@gmail.com](mailto:anandvk113@gmail.com)
+- **Institute Email:** [anandv@iitbhilai.ac.in](mailto:anandv@iitbhilai.ac.in)
+
+*Social profiles and links can also be found in the sidebar footer and on the [Contact]({{ '/contact/' | relative_url }}) page.*

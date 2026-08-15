@@ -4,27 +4,31 @@ icon: fas fa-file
 order: 6
 ---
 
-Hey! Thanks for visiting. 
-To find more details about my work and experience, please use the navigation menu on the left or the search bar at the top.
+You can view or download my Curriculum Vitae below.
 
-You can find my CV below for your reference.
+<div class="cv-actions d-flex flex-wrap gap-2 my-3">
+  <a href="https://drive.google.com/file/d/1z0OMu4s1GuGlAIf6RXhC13fxbZ-zATE0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+    <i class="fas fa-external-link-alt me-1"></i> Open Fullscreen / Download
+  </a>
+</div>
 
-
-<!-- <object data="/assets/anand_resume(1).pdf" width="100%" height="1050" type='application/pdf'> -->
-
-<div style="border: 1px solid #333; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;">
-  <!-- Top bar -->
-  <div style="background: #333; color: white; padding: 10px; text-align: center; font-size: 16px; font-weight: bold;">
-    Curriculum Vitae
+<div class="cv-embed-card" style="border: 1px solid var(--main-border-color); border-radius: 0.75rem; overflow: hidden; background: var(--card-bg);">
+  <div style="background: var(--card-header-bg, rgba(125, 125, 125, 0.1)); padding: 0.6rem 1rem; border-bottom: 1px solid var(--main-border-color); display: flex; justify-content: space-between; align-items: center; font-family: var(--font-family-monospace, monospace); font-size: 0.9rem;">
+    <span><i class="far fa-file-pdf me-2"></i> Anand_Vardhan_CV.pdf</span>
+    
   </div>
-  <!-- Embedded PDF -->
   <iframe src="https://drive.google.com/file/d/1z0OMu4s1GuGlAIf6RXhC13fxbZ-zATE0/preview" 
           width="100%" 
-          height="1000px" 
+          height="950px" 
           type="application/pdf" 
-          style="border: none;">
-    Your browser does not support iframes. You can view the CV directly 
-    <a href="https://drive.google.com/file/d/1z0OMu4s1GuGlAIf6RXhC13fxbZ-zATE0/view?usp=sharing">here</a>.
+          style="border: none; display: block;"
+          loading="lazy">
+    <div style="padding: 2rem; text-align: center;">
+      <p>Your browser could not embed the PDF preview directly.</p>
+      <a href="https://drive.google.com/file/d/1z0OMu4s1GuGlAIf6RXhC13fxbZ-zATE0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+        Open CV on Google Drive
+      </a>
+    </div>
   </iframe>
 </div>
 

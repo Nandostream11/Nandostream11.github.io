@@ -4,10 +4,17 @@ icon: fas fa-address-book
 order: 7
 ---
 
-**Personal email:** [anandvk113@gmail.com](mailto:anandvk113@gmail.com)  
+Feel free to reach out for research discussions, engineering collaborations, or inquiries.
 
-**Institute email:** [anandv@iitbhilai.ac.in](mailto:anandv@iitbhilai.ac.in)  
+### Direct Inquiries
 
-<!-- **Phone:** +1 (412) 224-0713  -->
+- **Personal Email:** [anandvk113@gmail.com](mailto:anandvk113@gmail.com)
+- **Institute Email:** [anandv@iitbhilai.ac.in](mailto:anandv@iitbhilai.ac.in)
 
-** All other socials can be found at the bottom left of the page.
+### Online Profiles
+
+- **LinkedIn:** [linkedin.com/in/anandvardhanrbtics](https://www.linkedin.com/in/anandvardhanrbtics)
+- **GitHub:** [github.com/Nandostream11](https://github.com/Nandostream11)
+- **Twitter / X:** [@ANANDV67213](https://twitter.com/ANANDV67213)
+
+*All social links are also accessible via the sidebar icons on any page.*
