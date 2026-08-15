@@ -12,8 +12,6 @@ excerpt: "*“Water is more hostile than space in many ways. You don’t just ne
 *“Water is more hostile than space in many ways. You don’t just need to survive — you need to maneuver, perceive, and think while drowning in darkness.”*  
  — Dr. Sylvia Earle, Oceanographer
 
-![](/assets/images/da6313a215cc5254f26f4a78eee96f27.png)
-
 ### 🌊 Introduction: When Water Feels More Alien Than Space
 
 The robotics domain has rapidly advanced in air, land, and even in orbit — but one realm remains notably underdeveloped: the deep sea. **Underwater robotics** presents a unique and daunting challenge that has kept many technologists at bay.

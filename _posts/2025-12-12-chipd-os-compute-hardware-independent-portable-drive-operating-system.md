@@ -11,8 +11,6 @@ excerpt: "### A Portable, External-SSD-supported Workstation for Developers, Hac
 
 ### A Portable, External-SSD-supported Workstation for Developers, Hackers & Future-Focused Technologists
 
-![](/assets/images/cb4b15d5a887106b94fecc33b4702118.png)
-
 In a world where developers work across multiple devices, environments, and architectures, one limitation remains strangely persistent: **our operating systems are still tied to the hardware they’re installed on.**
 
 CHIPD’OS for **Compute Hardware Independent Portable Drive Operating System** — challenges that assumption.

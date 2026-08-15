@@ -15,8 +15,6 @@ excerpt: "*By Anand Vardhan, Mechatronics Engineer & Robotics Innovator*..."
 
 While Silicon Valley often grabs headlines for robotics breakthroughs, a quiet revolution is taking shape across India — from the labs of IITs to startup hubs in Bengaluru, Pune, Hyderabad, and even Tier-2 cities like Raipur. Indian entrepreneurs are no longer just *consumers* of global innovation — they are becoming *creators* of frontier robotics solutions for uniquely Indian problems.
 
-![](/assets/images/8fc443734ce8f8e806ded9305e9d4c5d.jpeg)
-
 In 2025, India’s robotics ecosystem will not just survive. It’s **strategic**, **scrappy**, and **scaling**.
 
 Let’s dive into:
