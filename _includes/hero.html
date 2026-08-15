@@ -17,8 +17,16 @@
       <h1 class="hero-title">{{ site.title }}</h1>
       <p class="hero-tagline">{{ site.tagline }}</p>
 
+      <div class="hero-focus-tags">
+        <span class="hero-focus-pill"><i class="fas fa-robot"></i> Legged Locomotion</span>
+        <span class="hero-focus-pill"><i class="fas fa-network-wired"></i> Swarm Navigation</span>
+        <span class="hero-focus-pill"><i class="fas fa-water"></i> Marine Robotics</span>
+        <span class="hero-focus-pill"><i class="fas fa-microchip"></i> ROS 2 & Embedded</span>
+      </div>
+
       <div class="hero-cta">
-        <a href="{{ '/cv/' | relative_url }}" class="btn-hero btn-hero-primary">View CV</a>
+        <a href="{{ '/projects/' | relative_url }}" class="btn-hero btn-hero-primary">Explore Projects</a>
+        <a href="{{ '/cv/' | relative_url }}" class="btn-hero btn-hero-secondary">View CV</a>
         <a href="{{ '/contact/' | relative_url }}" class="btn-hero btn-hero-secondary">Contact</a>
 
         {% if site.github.username %}

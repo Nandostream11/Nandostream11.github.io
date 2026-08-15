@@ -72,28 +72,49 @@ layout: page
     const projectCards = document.querySelectorAll('.project-card-item');
     const countDisplay = document.getElementById('project-filter-count');
 
-    filterBtns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        filterBtns.forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-        let visibleCount = 0;
-
-        projectCards.forEach(function(card) {
-          const tags = card.getAttribute('data-tags') || '';
-          if (filter === 'all' || tags.indexOf(filter) !== -1) {
-            card.style.display = '';
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        if (countDisplay) {
-          countDisplay.textContent = visibleCount + (visibleCount === 1 ? ' project' : ' projects');
+    function applyFilter(filter) {
+      filterBtns.forEach(function(b) {
+        if (b.getAttribute('data-filter') === filter) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
         }
       });
+
+      let visibleCount = 0;
+      projectCards.forEach(function(card) {
+        const tags = card.getAttribute('data-tags') || '';
+        if (filter === 'all' || tags.indexOf(filter) !== -1) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (countDisplay) {
+        countDisplay.textContent = visibleCount + (visibleCount === 1 ? ' project' : ' projects');
+      }
+    }
+
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const filter = btn.getAttribute('data-filter') || 'all';
+        if (filter === 'all') {
+          history.replaceState(null, '', window.location.pathname);
+        } else {
+          history.replaceState(null, '', '#' + filter);
+        }
+        applyFilter(filter);
+      });
     });
+
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash) {
+      const match = Array.from(filterBtns).some(function(b) { return b.getAttribute('data-filter') === initialHash; });
+      if (match) {
+        applyFilter(initialHash);
+      }
+    }
   });
 </script>

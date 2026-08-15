@@ -147,7 +147,35 @@ body:has(.hero) #main-wrapper > .container {
 .hero-tagline {
   font-size: 1.1rem;
   color: var(--text-muted-color);
+  margin-bottom: 1.25rem;
+}
+
+.hero-focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
   margin-bottom: 1.75rem;
+}
+
+.hero-focus-pill {
+  font-family: $mono-font;
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.28rem 0.65rem;
+  border-radius: 4px;
+  background: var(--eng-surface);
+  border: 1px solid var(--eng-card-border);
+  color: var(--eng-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.02em;
+
+  i {
+    color: var(--eng-accent);
+    font-size: 0.75rem;
+  }
 }
 
 .hero-cta {
@@ -493,5 +521,50 @@ body:has(.hero) #main-wrapper > .container {
   margin-left: auto;
 }
 
+/* MathJax Equations & Formula Polish */
+mjx-container[jax="CHTML"][display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 0.85rem 1.25rem;
+  margin: 1.5rem 0;
+  background: var(--eng-surface);
+  border: 1px solid var(--eng-card-border);
+  border-left: 3px solid var(--eng-accent);
+  border-radius: 6px;
+  text-align: center;
 
+  /* Custom slim scrollbar for mobile equations */
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--eng-card-border);
+    border-radius: 4px;
+  }
+}
 
+mjx-container[jax="CHTML"]:not([display="true"]) {
+  padding: 0.1rem 0.25rem;
+  font-size: 105%;
+}
+
+/* Code Header & Code Block Polish */
+.code-header {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-family: $mono-font;
+  font-size: 0.78rem;
+
+  span[data-label-text] {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+div.highlight {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 1.5rem;
+}
