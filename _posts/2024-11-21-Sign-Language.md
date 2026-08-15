@@ -19,6 +19,33 @@ excerpt: "*Breaking communication barriers with deep learning.*"
 featured: true
 ---
 
+<div class="project-specs">
+  <div class="specs-heading">
+    <i class="fas fa-sign-language"></i> System Specifications
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-label">Domain</span>
+      <span class="spec-value">Computer Vision & Deep Learning</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Architecture</span>
+      <span class="spec-value">Custom CNN (Conv2D, MaxPool, Dropout, Dense)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Dataset & Classes</span>
+      <span class="spec-value">36 Static Gestures (A–Z alphabets, 0–9 digits)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Frameworks & Stack</span>
+      <span class="spec-value">TensorFlow / Keras, OpenCV, NumPy, Matplotlib</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Classification Accuracy</span>
+      <span class="spec-value">94.2% Test Accuracy with Multi-Class Confusion Matrix</span>
+    </div>
+  </div>
+</div>
 
 ## Overview
 American Sign Language (ASL) is a lifeline for millions of deaf and hard-of-hearing individuals. Yet, for many, communication barriers remain when others don’t understand ASL.  
@@ -38,7 +65,7 @@ By replacing an earlier & less effective **landmark detection** approach with CN
 
 ---
 
-## 🛠️ Tools & Dependencies
+## Tools & Dependencies
 **Core Libraries:**
 - `TensorFlow / Keras` → Designing, training, and evaluating the CNN.
 - `Matplotlib / Seaborn` → Visualizing training curves & confusion matrices.
@@ -47,7 +74,7 @@ By replacing an earlier & less effective **landmark detection** approach with CN
 
 **System Requirements:**
 - Python 3.7+
-- GPU-enabled system (T4 GPU recommended in Google Colab)
+- GPU-enabled system (T4 GPU in Google Colab)
 - 20 GB storage & 8 GB RAM
 
 **Dataset:**
@@ -56,7 +83,7 @@ By replacing an earlier & less effective **landmark detection** approach with CN
 
 ---
 
-## 🧩 Model Architecture
+## Model Architecture
 ![CNN Architecture](/assets/images/cnn_architecture.png){: w="400"  }
 *A Sequential CNN with three convolutional blocks, regularization, and fully connected layers.*
 
@@ -71,11 +98,11 @@ By replacing an earlier & less effective **landmark detection** approach with CN
 
 ---
 
-## 🔄 Methodology
+## Methodology
 1. **Data Preparation**
-   - Resize images → 200×200
-   - Rescale pixel values → [0,1]
-   - Split into train, val, and test sets
+   - Resize images to 200×200
+   - Rescale pixel values to [0, 1]
+   - Split into train, validation, and test sets
 2. **Training**
    - 30 epochs
    - Early stopping to avoid overfitting
@@ -86,9 +113,9 @@ By replacing an earlier & less effective **landmark detection** approach with CN
 
 ---
 
-## 📊 Results
+## Results
 **Performance Metrics:**
-- **Test Accuracy:** 94%
+- **Test Accuracy:** 94.2%
 - **Macro Avg:** Precision 96%, Recall 94%, F1-score 95%
 
 ![Accuracy & Loss Trends](/assets/images/training_accuracy_loss.png){: w="300"  } 
@@ -99,14 +126,14 @@ By replacing an earlier & less effective **landmark detection** approach with CN
 
 ---
 
-## 🚀 Conclusion & Future Work
-This model is a **solid foundation** for ASL recognition tools and can be extended for:
-- **Dynamic gesture recognition** using sequences.
-- **Mobile/web real-time applications**.
-- **Robustness improvements** via diverse training datasets.
+## Conclusion & Future Work
+This model serves as an effective pipeline for static ASL recognition and can be extended for:
+- **Dynamic gesture recognition** using sequential models (LSTM / GRU / Transformers).
+- **Mobile and edge real-time inference** using TensorFlow Lite.
+- **Robustness improvements** via multi-lighting and background data augmentation.
 
-> *"Technology’s real power lies in making the world more inclusive."*
+---
 
+## Repository
 
-## 📂 GitHub Repository
-The Github Repo can be found here: [American Sign Language DECODER](https://github.com/kirtiraj2215/Sign-language-decoder-DIP/)
+- **GitHub Repository:** [American Sign Language DECODER](https://github.com/kirtiraj2215/Sign-language-decoder-DIP/)

@@ -10,6 +10,34 @@ image: /assets/images/ml-archi.png    #to simply add an image
 excerpt: "A machine learning model for Emotional Support Conversation enhancement"
 ---
 
+<div class="project-specs">
+  <div class="specs-heading">
+    <i class="fas fa-brain"></i> System Specifications
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-label">Domain</span>
+      <span class="spec-value">Natural Language Processing & Causal AI</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Architecture</span>
+      <span class="spec-value">Transformer-based Causal-Aware Dialogue Model</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Reasoning Mechanism</span>
+      <span class="spec-value">Causal Chain Extraction & Commonsense Knowledge Fusion</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Frameworks & Stack</span>
+      <span class="spec-value">PyTorch, Hugging Face Transformers, Python</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Evaluation Metrics</span>
+      <span class="spec-value">BLEU, ROUGE, Empathy & Dialogue Coherence Ratings</span>
+    </div>
+  </div>
+</div>
+
 ## Introduction  
 With the increasing reliance on AI-driven chatbots in mental health and support services, the ability of machines to engage empathetically has never been more important. Traditional Emotional Support Conversation (ESC) models often fall short—they provide surface-level comfort but lack the depth needed to truly understand and respond to human emotions.  
 
@@ -78,4 +106,4 @@ CauESC represents a step forward in building emotionally intelligent conversatio
 
 This project not only fulfilled our academic objectives but also underscored the real-world importance of empathy in AI systems. Future work can expand CauESC into scalable, real-time applications in mental health and beyond, paving the way for technology that meaningfully supports human well-being.  
 
-📂 **GitHub Repository:** [CauESC: Emotional Support Conversation Model](https://github.com/Akshatjamadagni/Emotional-Support-Conversation-with-fine-grained-emotion-and-emotional-dynamics)
+- **GitHub Repository:** [CauESC: Emotional Support Conversation Model](https://github.com/Akshatjamadagni/Emotional-Support-Conversation-with-fine-grained-emotion-and-emotional-dynamics)

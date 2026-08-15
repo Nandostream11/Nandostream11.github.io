@@ -19,7 +19,39 @@ excerpt: "Isn't running CFD simulations every time a glider needs to optimize a 
 featured: true
 ---
 
-PS: This is a project based on a problem that I came across while modelling the constraints, equations and analysing CFD simulations used for designing the body of a Glider during my Summer Internship at an Underwater Robotics based company. 
+<div class="project-specs">
+  <div class="specs-heading">
+    <i class="fas fa-water"></i> System Specifications
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-label">Domain</span>
+      <span class="spec-value">Underwater Robotics & Inverse Computational Design</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Core Method</span>
+      <span class="spec-value">Machine Learning (Random Forest) for Hydrodynamic Estimation</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Physics & Data</span>
+      <span class="spec-value">Physics-based AUG Simulator, Variable Buoyancy & Lift Constraints</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Tooling & Stack</span>
+      <span class="spec-value">Python, Scikit-learn, NumPy, Pandas, Jupyter</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Primary Objective</span>
+      <span class="spec-value">Rapid Parameter Optimization without Repeated Costly CFD Cycles</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Repository</span>
+      <span class="spec-value"><a href="https://github.com/Nandostream11/AUG_Design_ESTIMA" target="_blank" rel="noopener noreferrer">AUG_Design_ESTIMA</a></span>
+    </div>
+  </div>
+</div>
+
+PS: This is a project based on a problem that I came across while modelling the constraints, equations and analysing CFD simulations used for designing the body of a Glider during my Summer Internship at an Underwater Robotics based company.
 
 ## Introduction
 Isn't running CFD simulations every time a glider needs to optimize a certain performance aspect too hectic or just less on ROI
@@ -31,115 +63,96 @@ This is where the idea behind **AUG Design ESTIMA** was born.
 
 ---
 
-### 🚀 Project Motivation
+### Project Motivation
 
-While researching tools for conceptual design and performance estimation, I came across **AI-guided aerodynamic optimizers** developed for aircraft design—particularly those that use data-driven approaches to evaluate drag, stability, and energy efficiency from shape and control parameters.
+While researching tools for conceptual design and performance estimation, I came across data-driven aerodynamic optimizers developed for aircraft design—particularly systems using machine learning to evaluate drag, stability, and energy efficiency directly from geometric and control parameters.
 
-These are widely used by **space and defense organizations** to reduce the dependency on expensive real-time CFD simulations. Unfortunately, no such **ML-accelerated system exists for underwater vehicles** despite their growing importance in naval, climate, and research domains.
-
----
-
-## 🎯 Objective
-
-To build an ML-powered tool that can **predict performance metrics** and **advise design modifications** for AUGs based on training over CFD-like simulation data. This reduces the need to run thousands of costly simulations every time we tweak a control surface or modify mass distribution.
-
-> “Instead of running a full simulation for each iteration, why not learn from simulations and estimate the optimal design space?”
+These methods are widely used in aerospace engineering to reduce reliance on expensive, iterative CFD simulations. However, comparable ML-accelerated workflows remain scarce in underwater vehicle design despite the sector's operational constraints.
 
 ---
 
-## ⚙️ How It Works
+## Objective
 
-### 1. Simulator as a Ground Truth Engine
+To build a machine learning pipeline that predicts hydrodynamic performance metrics and guides parameter modifications for Autonomous Underwater Gliders (AUGs) using physics-derived simulation data. This accelerates initial design space exploration without requiring computationally heavy CFD re-evaluations for every control surface or mass distribution adjustment.
 
-We use the [**AUG Simulator**](https://github.com/AUG-Simulator) developed by [Bhaswanth Ayapilla](https://www.linkedin.com/in/bhaswanth-a/) to generate performance data for various design parameters such as:
+> “Instead of running a full CFD simulation for each iteration, learn from the parameter space and estimate optimal vehicle configurations directly.”
 
-- Buoyancy frequency  
-- Mass center offset  
-- Wing area and angle  
-- Control delay  
+---
+
+## Technical Methodology
+
+### 1. Simulation Ground Truth
+
+The pipeline uses the [**AUG Simulator**](https://github.com/AUG-Simulator) developed by [Bhaswanth Ayapilla](https://www.linkedin.com/in/bhaswanth-a/) to generate performance data across target design parameters:
+
+- Buoyancy engine frequency  
+- Center of mass offset  
+- Wing area and angle of attack  
+- Actuator response delay  
 - Hydrodynamic damping coefficients
 
-This simulator provides high-fidelity outputs like pitch stability, energy consumption, glider range, and controllability.
+The simulator outputs key metrics including pitch stability, glide angle, energy consumption, range, and controllability.
 
 ---
 
 ### 2. Data Collection Pipeline
 
-A script batch-generates parameter combinations, executes the simulator for each, and stores:
+A batch-sampling script varies input parameters, runs the physics simulator, and logs:
 
-- Input configuration parameters  
-- Output performance metrics (travel distance, energy loss, etc.)  
-- Stability indicators (convergence, steady-state error)
+- Input geometry and mass configuration parameters  
+- Output performance metrics (displacement, glide ratio, energy loss)  
+- Stability indicators (convergence rate, steady-state error)
 
-We also label configurations with a **“quality score”** based on a multi-objective evaluation function prioritizing:
+Configurations are scored through a multi-objective evaluation function targeting:
 
-- Max distance per energy unit  
-- Stability over long durations  
-- Smooth trajectory  
-
----
-
-### 3. ML Model Training
-
-We train ML regression models (currently experimenting with **XGBoost**, **Random Forest**, and **Neural Networks**) to learn the inverse mapping from:
-
-**Desired Performance** ➝ **Design Parameters**
-
-#### Input:
-- Desired motion profile  
-- Max allowable energy consumption  
-- Required range and operational depth  
-
-#### Output:
-- Estimated optimal parameter configuration  
-- Predicted performance (with confidence)  
-
-This **inverse design** model helps find viable configurations quickly, which can later be refined using traditional simulation or evolutionary search.
+- Maximum distance per unit energy  
+- Long-duration pitch and roll stability  
+- Trajectory linearity  
 
 ---
 
-## 🧠 Future Work
+### 3. Machine Learning Estimation Model
 
-- 🧪 Integrate **active learning** to optimize sample efficiency  
-- 🔁 Add a **generative design loop** for shape prediction  
-- 🧼 Add explainability and constraints to ensure physical feasibility  
-- 🌊 Extend to ROVs and other AUV types  
+Regression models (evaluating **Random Forest**, **XGBoost**, and Multilayer Perceptrons) learn the inverse mapping:
+
+**Desired Performance Constraints** ➝ **Optimal Design Parameters**
+
+#### Inputs:
+- Target motion profile  
+- Maximum allowable energy budget  
+- Operating depth and target range  
+
+#### Outputs:
+- Estimated geometric and mass distribution parameters  
+- Predicted hydrodynamic performance with confidence intervals  
+
+This inverse design workflow enables rapid sizing and parameter screening, narrowing down candidates for final high-fidelity verification.
 
 ---
 
-## 📌 Repository Structure
+## Future Work
+
+- Integrate **active learning** to improve sample efficiency during data generation  
+- Implement a **generative geometry loop** for parametric hull and foil optimization  
+- Enforce physical feasibility and hydro-static constraints directly in the loss function  
+- Expand support to Remotely Operated Vehicles (ROVs) and hybrid glider configurations  
+
+---
+
+## Repository Structure
 
 | Directory        | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
-| `sim_interface/` | Scripts to run the AUG Simulator with various parameter sets |
-| `data/`          | Cleaned dataset of configurations and outcomes               |
-| `models/`        | Trained ML models and hyperparameter configs                 |
-| `notebooks/`     | Jupyter notebooks for visualization and training             |
-| `docs/`          | Technical writeups, plots, and methodology notes             |
+| `sim_interface/` | Scripts to interface with the AUG Simulator across parameter sets |
+| `data/`          | Processed configurations, sensor traces, and performance data |
+| `models/`        | Trained regression models and training checkpoints           |
+| `notebooks/`     | Jupyter notebooks for analysis, validation, and plotting     |
+| `docs/`          | Technical notes, equation derivations, and methodology       |
 
 ---
 
-## 🙌 Collaboration & Contact
+## Source & Details
 
-I'm actively seeking collaborators who are working in:
-
-- Marine Vehicle Simulation & Optimization  
-- AI for Physical Systems  
-- CFD + ML pipelines  
-- Underwater Robotics  
-
-If you’re building in this space, **let’s connect**!
-
----
-
-## 💬 Final Thoughts
-
-With the rise of autonomy across domains, underwater remains one of the most **challenging and underexplored** environments. This project is a small step towards creating intelligent co-pilots for marine vehicle design. If even a few researchers or developers benefit from this tool and accelerate their development loop, that would be a win.
-
-> Let’s build smarter systems — even beneath the waves 🌊
-
----
-
-**🔗 GitHub:** [AUG Design ESTIMA](https://github.com/Nandostream11/AUG_Design_ESTIMA)  
-**💡 Tech Stack:** Python, Scikit-learn, XGBoost, Matplotlib, AUG Simulator  
-**⚡ Related:** `#UnderwaterRobotics` `#MachineLearning` `#AUV` `#DesignAutomation` `#RoboticsEngineering`  
+- **GitHub Repository:** [AUG Design ESTIMA](https://github.com/Nandostream11/AUG_Design_ESTIMA)  
+- **Stack:** Python, Scikit-learn, XGBoost, NumPy, Pandas, AUG Simulator  
+- **Tags:** Underwater Robotics, Machine Learning, Computational Design, AUVs  

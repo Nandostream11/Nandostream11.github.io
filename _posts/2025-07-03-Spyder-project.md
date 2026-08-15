@@ -11,6 +11,34 @@ image: /assets/images/spider.jpg    #to simply add an image
 excerpt: "A mini-project at a Summer Internship"
 ---
 
+<div class="project-specs">
+  <div class="specs-heading">
+    <i class="fas fa-spider"></i> System Specifications
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-label">Domain</span>
+      <span class="spec-value">Embedded Robotics & Wireless Control</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Actuation</span>
+      <span class="spec-value">12-DOF (12× SG90 Servos, 3-DOF per Leg)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Chassis & Power</span>
+      <span class="spec-value">Symmetrical Acrylic Frame, 11.1V LiPo + Buck Converter (5-6V)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Microcontroller & Comms</span>
+      <span class="spec-value">Arduino, HC-05 Bluetooth Module (SoftwareSerial)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">User Interface</span>
+      <span class="spec-value">Custom Android App (MIT App Inventor)</span>
+    </div>
+  </div>
+</div>
+
 ## Introduction: Sharpening the Axe Before the Swing
 
 In the spirit of the age-old lumberjack analogy, this project wasn't about rushing to build a robot. Instead, it was a meticulously pre-planned engineering experiment, focusing not only on functionality but on modularity, control theory, and real-time human-robot interaction.
@@ -89,55 +117,51 @@ if (BTSerial.available()) {
 ```
 
 This allows precise one-line-at-a-time parsing with low memory overhead.
-### 📱 [The Custom App](https://gallery.appinventor.mit.edu/?galleryid=2efb529e-4fd4-4e29-9e0e-647f524872d5) – Built with MIT App Inventor
+
+### [The Custom App](https://gallery.appinventor.mit.edu/?galleryid=2efb529e-4fd4-4e29-9e0e-647f524872d5) – Built with MIT App Inventor
 
 #### Features
 
 - Clean UI with command buttons (Walk, Sit, Wave, etc.)
 - Input box for custom step count
-- Real-time Bluetooth response display via .ReceiveText
-- Handles newline-based protocol and shows only the last line for performance
+- Real-time Bluetooth response display via `.ReceiveText`
+- Handles newline-based protocol and displays the latest status line
 
 #### Workflow
 
-- On button click: send "cmd step\n" string
-- Use .BytesAvailableToReceive and .ReceiveText(-1)
-- Split at \n, select last item from list
+- On button click: send `"cmd step\n"` string
+- Use `.BytesAvailableToReceive` and `.ReceiveText(-1)`
+- Split at `\n`, select last item from list
 - Display in label or debugger box
 
 ## Design Thinking & Challenges
+
 ### Constraint-Aware Coding
 
 - 2KB SRAM limit on Arduino Uno
-- Used lean memory buffers and avoided dynamic allocations
-- Pin mapping maximized usage without overlap
+- Lean memory buffers without dynamic allocations
+- Pin mapping optimized to utilize available digital outputs without conflict
 
 ### Power Management
 
-- Buck converter set to ~6V output
-- Isolated logic (Arduino) from servo power to prevent resets
+- Buck converter regulated to ~6V output
+- Logic rails isolated from high-draw servo power to prevent brownouts and resets
 
 ### Gesture Sequencing
 
-- Each gesture was defined as a series of angles
-- Step interpolation added to each transition
-- Reduced jerkiness and improved accuracy
+- Each gait and gesture defined as target joint angle arrays
+- Step interpolation applied across transitions to reduce mechanical shock
 
 ## Demo & Results
 
-Visit the GitHub Repo to see:
-- Arduino code
-- App Inventor .aia file
-- Full circuit diagrams
-- Servo math logic and step models
-- Build pictures and videos
+Visit the GitHub repository for:
+- Arduino firmware
+- MIT App Inventor `.aia` source
+- Wiring schematics
+- Kinematic calculations and gait sequence maps
 
-## Conclusion: A Spider With a Brain
+## Conclusion
 
-This robot is not just about crawling, it is about interpreting instructions, executing gait patterns, and wirelessly interacting with a user. It blends mechanical kinematics, embedded systems, and a mobile interface for real-world human-robot communication.
+This project demonstrates coordinated 12-DOF multi-leg actuation, wireless command parsing, and real-time mobile interfacing under resource-constrained embedded hardware.
 
-What began as an idea during summer became a fully functional interactive robot built from scratch using careful planning and relentless debugging.
-
-Feel free to fork the code, use the hardware map, or even integrate your own AI/ML layer for gesture prediction. The world of robotics is yours to spider-crawl into! 🕷️🤖
-
-🔗 [GitHub Repository](https://github.com/Nandostream11/Spider_Quad)
+- **GitHub Repository:** [Spider_Quad](https://github.com/Nandostream11/Spider_Quad)

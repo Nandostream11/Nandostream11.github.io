@@ -16,8 +16,39 @@ image: /assets/images/Jack(phase1).png    #to simply add an image
 #   path: /path/to/image
 #   alt: image alternative text
 excerpt: "A Robotics project that inspired me towards unconventional robotics"
-featured: true
 ---
+
+<div class="project-specs">
+  <div class="specs-heading">
+    <i class="fas fa-microchip"></i> System Specifications
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-label">Domain</span>
+      <span class="spec-value">Legged Locomotion & Controls</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Mechanical Architecture</span>
+      <span class="spec-value">12-DOF Quadruped (3-DOF/leg), Fusion 360</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Kinematics & Modeling</span>
+      <span class="spec-value">Analytical Inverse Kinematics, Simulink, Hildebrand Gaits</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Electronics & Control</span>
+      <span class="spec-value">Custom Embedded PCB, Arduino RX-TX Controller</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Sensors & Simulation</span>
+      <span class="spec-value">BNO055 IMU, 2D LiDAR Fusion, Gazebo / RViz</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Key Outcome</span>
+      <span class="spec-value">First Prize — Inter-Departmental Research Meet '24</span>
+    </div>
+  </div>
+</div>
 
 # Introduction
 This project documents the design and development of JACK, a compact, open-source quadrupedal robot dog. Conceived as a collaborative academic effort during my B.Tech at IIT Bhilai, the robot was built from scratch and underwent two major phases: initial prototyping and subsequent improvements for advanced navigation. The project aimed to explore unconventional robotics, focusing on custom mechanical design, embedded electronics, and autonomous capabilities.
@@ -201,31 +232,8 @@ Quantitative Improvements:
     The robot can now take stable steps on 4–6 cm level differences without slipping. -->
 
 
-<!-- 🚧 Challenges & Resolutions
-Key Hurdles:
-    Sensor Noise and Drift:
-        Early instability due to noisy IMU data.
-        Solution: Time-synchronized averaging + low-pass filtering + consistent mounting orientation.
-    Wi-Fi Interruptions:
-        Raspberry Pi occasionally lost SSH connection during movement due to fluctuating power.
-        Solution: Switched to a dedicated power regulator and added a small UPS module.
-    Motor Overheating:
-        Continuous torque demand in initial gaits led to overheating of servo motors.
-        Resolution: Introduced micro-pauses between gait cycles and reduced duty cycle.
-Trade-offs & Iterative Fixes:
-    Sacrificed gait speed slightly for higher body stability.
-    Chose lighter sensors (2D LiDAR instead of 3D) to meet power constraints in Phase I.
-    Validated changes through 15+ field walk tests and sensor stability graphs logged using rqt_plot.
-🖼️ Visual Enhancements
-You may embed the following media:
-    Image 1: CAD model showing IMU and LiDAR mounting positions.
-    Image 2: Side-by-side comparison: earlier unstable gait vs. current stable trot.
-    Video Clip: Footage of the robot navigating through an obstacle course.
-    Flowchart: Gait control loop with sensor feedback integration.
-👉 [Tip: Upload these to a GitHub repo or Google Drive and embed them in your blog via markdown or iframe]
-🚀 Future Enhancements -->
 <!-- Planned Upgrades:
-    3D LiDAR integration to enable full terrain mapping and step-height adaptation.
-    Advanced SLAM (possibly RTAB-Map or Cartographer in ROS2) for GPS-free navigation.
-    Force Sensors on feet for precise contact detection and active terrain compliance.
-    Switch to better actuators (possibly brushless with encoders) for torque control and higher efficiency. -->
+    3D LiDAR integration for full terrain mapping and step-height adaptation.
+    Advanced SLAM for GPS-denied navigation.
+    Force sensors on feet for ground contact detection and active compliance.
+    Brushless actuators with encoders for torque control and higher efficiency. -->

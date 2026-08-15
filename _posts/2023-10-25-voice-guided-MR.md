@@ -9,6 +9,33 @@ image: /assets/images/MobileRobot.png
 excerpt: An Efficient Alternative for Operation in Hazardous Environments
 ---
 
+<div class="project-specs">
+  <div class="specs-heading">
+    <i class="fas fa-microphone-alt"></i> System Specifications
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-label">Domain</span>
+      <span class="spec-value">Mobile Robotics & Hazardous Environment Operation</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Chassis & Drive</span>
+      <span class="spec-value">Differential Drive Mobile Platform with Ultrasonic Obstacle Sensing</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Control & Protocol</span>
+      <span class="spec-value">ESP32, ESP-NOW Low-Latency Wireless Peer-to-Peer Protocol</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Voice Interface</span>
+      <span class="spec-value">Speech Recognition Parser for Modular Navigation Commands</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Target Application</span>
+      <span class="spec-value">Hazardous / Radiation Inspection with Hands-Free Step Control</span>
+    </div>
+  </div>
+</div>
 
 ## Introduction
 
