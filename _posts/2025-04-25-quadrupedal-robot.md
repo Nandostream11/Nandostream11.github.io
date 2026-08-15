@@ -7,7 +7,7 @@ author: anand
 # authors: [<author1_id>, <author2_id>]   # for multiple entries
 mermaid: true
 math: true
-image: /assets/images/Jack(phase1).png
+image: /assets/images/Jack_phase1.png
 description: "Design, analytical kinematics modeling, custom embedded electronics, and inverse kinematics control for JACK, a 12-DOF quadrupedal robot."
 excerpt: "Design, analytical kinematics modeling, and control system for an open-source 12-DOF quadrupedal robot."
 featured: true
@@ -74,7 +74,7 @@ _CAD Model of the Legged_Robot Phase 1 made on Autodesk Fusion 360_
 The initial phase focused on building a functional prototype from scratch. A custom RX-TX wired controller with Arduino Boards was developed on a PCB, featuring a joystick for driving the speed of body movement in any direction and buttons for directional control and to switch between gait patterns(referring to march past and the most common, trot gait; gait system was not much established in this phase). 
 The electronics were designed to support real-time embedded control and communication with the robot’s actuators.
 The electronics were custom-built, featuring an Arduino-based controller and a wired joystick interface for manual operation. \
-![High level view of the inverse kinematics for each leg](/assets/images/Controller(phase1).png){: w="250"  }
+![High level view of the inverse kinematics for each leg](/assets/images/Controller_phase1.png){: w="250"  }
 _In-hand Controller counterpart_ 
 
 ### **Kinematics & Control**
@@ -86,7 +86,7 @@ _High level view of the Inverse kinematics for each leg_
  This robot was prepared as a part of a Robotics Fundamentals course curriculum and we reached some basic Low level embedded & MATLAB programmed stage.
 We first programmed the three joints in a single Leg with the analogy of a robotic Arm with 3 servo motors. The leg kinematics was modelled with MATLAB Simulink using inverse solver. \
 {% include embed/video.html src='/assets/videos/quadruped/singleleg-ik-sim.mp4' title='Single-leg inverse kinematics simulation, 3-DOF arm analogy' autoplay=true loop=true muted=true %}
-![4-Legged Robot](/assets/images/Base-electronics(phase1).png){: w="500"  }
+![4-Legged Robot](/assets/images/Base-electronics_phase1.png){: w="500"  }
 _Top view of the base electronics_ 
 
 At the end of phase I, each leg of the 4-Legged Robot dog could move using continuous Inverse Kinematics to produce joint angles as per the desired trajectory point. An algorithm code was made in order to control the motion of the robot dog as per the input from a in hand Controller device. The Controller setup present onboard the Robot dog processes the input to perform the power distribution into the separate motors to locomote in a particular direction. 
