@@ -6,7 +6,7 @@ tags: [navigation, ros2, robotics]     # TAG names should always be lowercase
 author: anand
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
-image: /assets/images/default.png    #to simply add an image
+image: /assets/images/dwa-demo/frame_002.jpeg
 # toc: false        #to turn off table of contents on right side for this post
 # comments: false      #to turn off comments for this post
 # pin: true             #to pin to top of homepage
@@ -18,7 +18,6 @@ excerpt: "This was in fulfillment with an assignment shared by a construction ro
 
 # Introduction to DWA Planner
 
-[Github](https://github.com/Nandostream11/10x_assignment)
 
 ## Overview
 
@@ -104,7 +103,7 @@ ffmpeg -ss 00:00:10 -i demo.mp4 -frames:v 1 frame_10.jpg
 Below is an additional frame taken from the storyboard extraction that highlights a close-obstacle scenario used to tune the `inflation_rad` parameter:
 
 ![Close obstacle scenario](/assets/images/dwa-demo/frame_010.jpeg)
-*Figure 3 — Close-obstacle rollback case used during parameter tuning. Extracted frame: `frame_010.jpeg`.*
+*Figure 3 — Close-obstacle rollback case used during parameter tuning. Extracted frame: `frame_010.jpeg`.`
 ```
 
 
@@ -161,7 +160,7 @@ Tell me which next step you want and I'll implement it.
 
 ## References
 
-- Repository: https://github.com/Nandostream11/10x_assignment
+- [Github](https://github.com/Nandostream11/10x_assignment)
 - Example video demo linked in the repository README.
 
 If you want, I can convert the hard-coded parameters into a `params.yaml` and wire them into `DWAPlannerCustom` for runtime tuning. I can also change the `togoal` service into an action server in a follow-up commit.
