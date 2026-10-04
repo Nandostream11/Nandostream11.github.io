@@ -1,6 +1,5 @@
-@use 'abstracts/mixins' as mx;
-
-$mono-font: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+$mono-font:
+  ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
 
 /* Engineering accent + grid-line custom properties, layered on top of the
    existing --bs-theme-driven variables rather than replacing them. */
@@ -15,12 +14,12 @@ $mono-font: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', mo
 }
 
 :root:not([data-bs-theme]) {
-  @include mx.color-scheme(light) {
+  @media (prefers-color-scheme: light) {
     --eng-accent: #0e7c86;
     --eng-grid-line: rgb(20 20 20 / 6%);
   }
 
-  @include mx.color-scheme(dark) {
+  @media (prefers-color-scheme: dark) {
     --eng-accent: #5fd1dd;
     --eng-grid-line: rgb(255 255 255 / 6%);
   }
@@ -88,10 +87,18 @@ body:has(.hero) #main-wrapper > .container {
 }
 
 .hero {
-  padding: 4rem 1rem 3rem;
+  padding: 2.2rem 1rem 2rem;
   background-image:
-    repeating-linear-gradient(0deg, var(--eng-grid-line) 0 1px, transparent 1px 32px),
-    repeating-linear-gradient(90deg, var(--eng-grid-line) 0 1px, transparent 1px 32px);
+    repeating-linear-gradient(
+      0deg,
+      var(--eng-grid-line) 0 1px,
+      transparent 1px 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--eng-grid-line) 0 1px,
+      transparent 1px 32px
+    );
 }
 
 .hero-inner {
@@ -100,7 +107,7 @@ body:has(.hero) #main-wrapper > .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1rem;
   text-align: center;
 }
 
@@ -115,8 +122,12 @@ body:has(.hero) #main-wrapper > .container {
    viewport width instead of leaving rounding-error gaps. */
 .hero-photo-wrap {
   width: 100%;
-  max-width: 420px;
+  max-width: 360px;
   aspect-ratio: 1280 / 1046;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--eng-card-border);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
 
   .preview-img {
     aspect-ratio: auto;
@@ -138,33 +149,36 @@ body:has(.hero) #main-wrapper > .container {
 }
 
 .hero-title {
-  font-size: 2rem;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.35rem;
   color: var(--heading-color);
 }
 
 .hero-tagline {
-  font-size: 1.1rem;
+  font-size: 0.96rem;
   color: var(--text-muted-color);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
 }
 
 .hero-focus-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1.75rem;
+  gap: 0.45rem;
+  margin-bottom: 1.15rem;
 }
 
 .hero-focus-pill {
   font-family: $mono-font;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  padding: 0.28rem 0.65rem;
-  border-radius: 4px;
-  background: var(--eng-surface);
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(14, 124, 134, 0.06);
   border: 1px solid var(--eng-card-border);
   color: var(--eng-text-muted);
   display: inline-flex;
@@ -174,7 +188,7 @@ body:has(.hero) #main-wrapper > .container {
 
   i {
     color: var(--eng-accent);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 }
 
@@ -183,19 +197,23 @@ body:has(.hero) #main-wrapper > .container {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 
 .btn-hero {
-  padding: 0.5rem 1.25rem;
+  padding: 0.6rem 1.3rem;
   border-radius: 999px;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   text-decoration: none;
   border: 1px solid var(--eng-accent);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     text-decoration: none;
+    transform: translateY(-1px);
   }
 }
 
@@ -204,7 +222,7 @@ body:has(.hero) #main-wrapper > .container {
   color: var(--main-bg);
 
   &:hover {
-    opacity: 0.85;
+    opacity: 0.92;
     color: var(--main-bg);
   }
 }
@@ -223,8 +241,8 @@ body:has(.hero) #main-wrapper > .container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
   border: 1px solid var(--eng-accent);
   color: var(--eng-accent);
@@ -240,37 +258,44 @@ body:has(.hero) #main-wrapper > .container {
 .featured-projects {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem 1rem 3rem;
+  padding: 0.75rem 1rem 2.5rem;
 }
 
 #featured-projects .mono-heading {
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--eng-accent);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--eng-accent);
   display: inline-block;
 }
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .featured-card {
-  border: 1px solid var(--main-border-color);
-  border-radius: 0.75rem;
+  border: 1px solid var(--eng-card-border);
+  border-radius: 0.8rem;
   overflow: hidden;
-  transition: border-color 0.2s ease;
+  background: rgba(255, 255, 255, 0.015);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.03);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     border-color: var(--eng-accent);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
   }
 
   h3 {
-    font-size: 1.05rem;
-    margin: 0.75rem 1rem 0.25rem;
+    font-size: 1rem;
+    margin: 0.7rem 1rem 0.3rem;
 
     a {
       color: var(--heading-color);
@@ -280,44 +305,16 @@ body:has(.hero) #main-wrapper > .container {
   p {
     margin: 0 1rem 0.5rem;
     color: var(--text-muted-color);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .post-meta {
     margin: 0 1rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 
-/* Previously-unstyled thumbnail wrapper shared by Projects/Blog/Featured cards.
-   No fixed aspect-ratio/crop here — each photo's own proportions differ
-   (portrait-ish screenshots vs. wide renders), so the container just fills
-   the card width and the image scales to its own natural height.
-
-   On `layout: home`, the theme's own refactor-content.html auto-wraps every
-   <img> in a `.preview-img` div with a fixed 40/21 aspect-ratio + object-fit:
-   cover (see gem _sass/base/_base.scss) — that wrapper's higher specificity
-   otherwise wins over .post-img alone, so it's reset here too. */
-.post-img-cnt {
-  width: 100%;
-  overflow: hidden;
-  background: var(--img-bg);
-
-  .preview-img {
-    aspect-ratio: auto;
-    height: auto;
-
-    img {
-      height: auto;
-      object-fit: unset;
-    }
-  }
-}
-
-/* Featured cards only: a fixed 3/2 thumbnail box. Reserves the image's
-   space before it loads (no layout shift) and keeps the grid rows even —
-   the current featured photos range from ~1.26 to ~1.83 aspect, so 3/2 is
-   the least-cropping common frame. */
 .featured-card .post-img-cnt {
   aspect-ratio: 3 / 2;
 
@@ -367,14 +364,27 @@ article .preview-img.shimmer,
   }
 }
 
+/* Ensure inline/post images are responsive and visually consistent */
+article .post-content img,
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.65rem;
+  object-fit: contain;
+}
+
 /* Projects & Blog listings (#post-list wraps both layouts): scale the card
    title and thumbnail to 50% of their former size */
 #post-list .post-preview {
   border: 1px solid var(--main-border-color);
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  padding: 0.75rem 1.25rem;
   background: var(--card-bg);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     border-color: var(--eng-accent);
@@ -384,7 +394,7 @@ article .preview-img.shimmer,
   h2 {
     font-size: calc((1.375rem + 1.5vw) * 0.5);
     font-family: $mono-font;
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.6rem 0; /* remove top margin and tighten spacing */
 
     @media (min-width: 1200px) {
       font-size: 1.25rem;
@@ -412,16 +422,14 @@ article .preview-img.shimmer,
 .project-tag-pill {
   display: inline-block;
   font-family: $mono-font;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  background: var(--eng-grid-line);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(14, 124, 134, 0.05);
   color: var(--eng-accent);
-  border: 1px solid var(--eng-accent);
-  opacity: 0.9;
+  border: 1px solid var(--eng-card-border);
   letter-spacing: 0.02em;
-  text-transform: lowercase;
   white-space: nowrap;
 }
 
@@ -545,7 +553,7 @@ article .preview-img.shimmer,
 }
 
 /* MathJax Equations & Formula Polish */
-mjx-container[jax="CHTML"][display="true"] {
+mjx-container[jax='CHTML'][display='true'] {
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
@@ -567,7 +575,7 @@ mjx-container[jax="CHTML"][display="true"] {
   }
 }
 
-mjx-container[jax="CHTML"]:not([display="true"]) {
+mjx-container[jax='CHTML']:not([display='true']) {
   padding: 0.1rem 0.25rem;
   font-size: 105%;
 }
@@ -608,3 +616,166 @@ div.highlight {
   }
 }
 
+.hero-kicker,
+.mini-label {
+  font-family: $mono-font;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eng-accent);
+  margin: 0 0 0.75rem;
+}
+
+.hero-stats {
+  display: none;
+}
+
+.featured-header {
+  margin-bottom: 0.9rem;
+}
+
+.featured-card-body {
+  padding: 0.1rem 0 0;
+}
+
+.featured-card h3 {
+  margin-top: 0;
+}
+
+.featured-cta-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+
+.experience-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.experience-card {
+  position: relative;
+  border: 1px solid var(--eng-card-border) !important;
+  border-radius: 0.9rem !important;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.045);
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(
+      180deg,
+      var(--eng-accent),
+      color-mix(in srgb, var(--eng-accent) 60%, transparent)
+    );
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--eng-accent) !important;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-body {
+    padding: 1.2rem 1.25rem 1rem;
+  }
+
+  .card-title {
+    font-family: $mono-font;
+    font-size: 1.04rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.35rem;
+    color: var(--heading-color);
+  }
+
+  .text-muted {
+    color: var(--eng-accent) !important;
+    opacity: 0.9;
+  }
+
+  ul {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+
+    li {
+      margin-bottom: 0.38rem;
+      color: var(--text-muted-color);
+      line-height: 1.58;
+      font-size: 0.94rem;
+    }
+  }
+}
+
+#sidebar {
+  background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid var(--eng-card-border);
+}
+
+#sidebar .nav-wrapper {
+  padding-top: 1.25rem;
+}
+
+#sidebar .nav-item {
+  margin: 0.12rem 0;
+}
+
+#sidebar .nav-link {
+  font-family: $mono-font;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--heading-color);
+  padding: 0.7rem 1rem 0.7rem 1.1rem;
+  border-radius: 0.65rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    background: rgba(14, 124, 134, 0.06);
+    color: var(--eng-accent);
+    transform: translateX(1px);
+    text-decoration: none;
+  }
+}
+
+#sidebar .nav-item.active .nav-link {
+  background: rgba(14, 124, 134, 0.08);
+  color: var(--eng-accent);
+  border: 1px solid var(--eng-card-border);
+}
+
+#sidebar .nav-link::before {
+  content: none;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 2.5rem;
+  }
+
+  .hero-focus-tags {
+    gap: 0.4rem;
+  }
+
+  .hero-focus-pill {
+    font-size: 0.7rem;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
