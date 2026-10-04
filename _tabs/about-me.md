@@ -8,32 +8,62 @@ order: 1
 
 ### Hi there! I'm Anand Vardhan.
 
-I am a robotics engineer and researcher with a focus on **intelligent systems, kinematics, and perception**. My work spans the complete lifecycle of robotic platforms—from mechanical design and custom embedded electronics to high-level motion planning and autonomous swarm coordination.
+I am a robotics engineer and researcher working across **autonomous systems, perception, and mechanical design**. My work connects hardware, embedded systems, and software to build systems that are technically grounded and practically testable.
 
-I thrive at the intersection of hardware and software, bridging physical mechanical constraints, custom microcontroller firmware, and algorithmic control through frameworks like ROS 2, PyTorch, and Gazebo.
+I am especially interested in robotics problems at the boundary between **kinematics, control, and deployment**.
 
 ---
 
 ### Core Engineering Focus
 
 <div class="project-tags d-flex flex-wrap gap-2 mb-4">
-  <span class="project-tag-pill"><i class="fas fa-robot me-1"></i> Legged Locomotion & Inverse Kinematics</span>
-  <span class="project-tag-pill"><i class="fas fa-network-wired me-1"></i> Swarm & Multi-Agent AMRs</span>
+  <span class="project-tag-pill"><i class="fas fa-robot me-1"></i> Legged Robotics</span>
+  <span class="project-tag-pill"><i class="fas fa-network-wired me-1"></i> Swarm & Multi-Agent Systems</span>
   <span class="project-tag-pill"><i class="fas fa-water me-1"></i> Marine & Underwater Robotics</span>
-  <span class="project-tag-pill"><i class="fas fa-eye me-1"></i> Computer Vision & Perception</span>
-  <span class="project-tag-pill"><i class="fas fa-microchip me-1"></i> Embedded Systems & ESP-NOW</span>
+  <span class="project-tag-pill"><i class="fas fa-eye me-1"></i> Computer Vision</span>
+  <span class="project-tag-pill"><i class="fas fa-microchip me-1"></i> Embedded Systems</span>
 </div>
 
 ---
 
-### Technical Tooling & Stack
+### Professional Experience
 
-| Domain | Key Tools & Frameworks |
-| :--- | :--- |
-| **Robotics & Middleware** | ROS 2 (Humble), Nav2, Gazebo, RViz, MATLAB / Simulink |
-| **Perception & AI** | PyTorch, YOLOv8, OpenCV, Scikit-learn, Hugging Face Transformers |
-| **Embedded & Firmware** | C/C++, Arduino, ESP-IDF, ESP-NOW, FreeRTOS, Raspberry Pi 4B |
-| **Mechanical & Hardware** | Fusion 360, Analytical IK Modeling, Custom PCB Prototyping |
+<div class="mb-4 experience-stack">
+  <article class="card border-0 shadow-sm mb-3 experience-card">
+    <div class="card-body">
+      <h4 class="card-title mb-2"><strong>Robotics Software Engineer</strong></h4>
+      <p class="mb-2 text-muted"><small><em>Telebortix Innovations, Noida &nbsp;|&nbsp; June 2026 – Present</em></small></p>
+      <ul class="mb-0 ps-3">
+        <li><small><em>Working on a visual-inertial navigation stack for a custom unmanned aerial vehicle, drawing on research in estimation and perception.</em></small></li>
+        <li><small><em>Tools &amp; technologies used: C++, ROS2, State Estimation, Computer Vision.</em></small></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="card border-0 shadow-sm mb-3 experience-card">
+    <div class="card-body">
+      <h4 class="card-title mb-2"><strong>Robotics (Simulation) Engineer Intern</strong></h4>
+      <p class="mb-2 text-muted"><small><em>Cosmoserve Space, Hyderabad &nbsp;|&nbsp; January 2026 – May 2026</em></small></p>
+      <ul class="mb-0 ps-3">
+        <li><small><em>Explored rigid-body dynamics and control strategies for a cable-driven soft-robotic mechanism using physics-based simulation tools.</em></small></li>
+        <li><small><em>Compared simulation outputs against expected behavior to improve model assumptions and better match real conditions.</em></small></li>
+        <li><small><em>Tools &amp; technologies used: Python, MuJoCo, Isaac Sim, Control Systems, MATLAB.</em></small></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="card border-0 shadow-sm mb-3 experience-card">
+    <div class="card-body">
+      <h4 class="card-title mb-2"><strong>Robotics Intern (GET)</strong></h4>
+      <p class="mb-2 text-muted"><small><em>Bariflo Cybernetics, Bhubaneswar &nbsp;|&nbsp; May 2025 – July 2025</em></small></p>
+      <ul class="mb-0 ps-3">
+        <li><small><em>Worked on kinematic and dynamic modeling for a hexapod amphibious robot in an environmental robotics project.</em></small></li>
+        <li><small><em>Contributed to concept design and system-level development for an underwater drone intended for sensing and detection tasks.</em></small></li>
+        <li><small><em>Tools &amp; technologies used: SolidWorks, PCB Design, MATLAB, ROS2, System Design, Sensor Integration.</em></small></li>
+      </ul>
+    </div>
+  </article>
+</div>
 
 ---
 

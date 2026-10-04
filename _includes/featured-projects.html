@@ -2,43 +2,59 @@
 
 {% if featured_posts.size > 0 %}
   <section id="featured-projects" class="featured-projects">
-    <h2 class="mono-heading">Featured Projects</h2>
+    <div class="featured-header">
+      <p class="mini-label">Selected work</p>
+      <h2 class="mono-heading">Featured Projects</h2>
+    </div>
 
     <div class="featured-grid">
       {% for post in featured_posts %}
-        <div class="post-preview featured-card">
+        <article class="post-preview featured-card">
           {% assign feat_cover = post.image | default: '/assets/images/default.png' %}
           <div class="post-img-cnt">
             <a href="{{ post.url | relative_url }}">
-              <img src="{{ feat_cover }}" alt="{{ post.title }} image" class="post-img" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/images/default.png';">
+              <img
+                src="{{ feat_cover }}"
+                alt="{{ post.title }} image"
+                class="post-img"
+                loading="lazy"
+                decoding="async"
+                onerror="this.onerror=null;this.src='/assets/images/default.png';"
+              >
             </a>
           </div>
 
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <div class="featured-card-body">
+            <h3>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
 
-          <p>{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>
+            <p>{{ post.excerpt | markdownify | strip_html | truncate: 150 }}</p>
 
-          {% if post.tags.size > 0 %}
-            <div class="project-tags d-flex flex-wrap gap-1 px-3 mb-2">
-              {% for tag in post.tags limit: 3 %}
-                <span class="project-tag-pill">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
+            {% if post.tags.size > 0 %}
+              <div class="project-tags d-flex flex-wrap gap-1 px-3 mb-2">
+                {% for tag in post.tags limit: 3 %}
+                  <span class="project-tag-pill">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
 
-          <div class="post-meta text-muted d-flex justify-content-between">
-            <div>
-              <i class="far fa-calendar fa-fw"></i>
-              {% include timeago.html date=post.date tooltip=true %}
+            <div class="post-meta text-muted d-flex justify-content-between">
+              <div>
+                <i class="far fa-calendar fa-fw"></i>
+                {% include timeago.html date=post.date tooltip=true %}
 
-              <i class="far fa-clock fa-fw ms-1"></i>
-              {% include read-time.html content=post.content %}
+                <i class="far fa-clock fa-fw ms-1"></i>
+                {% include read-time.html content=post.content %}
+              </div>
             </div>
           </div>
-        </div>
+        </article>
       {% endfor %}
     </div>
 
-    <a href="{{ '/projects/' | relative_url }}" class="view-all-link">View all projects &rarr;</a>
+    <div class="featured-cta-row">
+      <a href="{{ '/projects/' | relative_url }}" class="view-all-link">View all projects &rarr;</a>
+    </div>
   </section>
 {% endif %}
