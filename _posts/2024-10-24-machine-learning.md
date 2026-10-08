@@ -1,5 +1,5 @@
 ---
-title: CauESC- A Causal-Aware Model for Emotional Support Conversations
+title: CauESC — Transformer-Based Emotional Support Dialogue with Causal Reasoning and Commonsense Knowledge
 date: 2024-10-24 00:00:00 +0530
 categories: [Projects, Machine Learning]
 tags: [machine learning, chat model]     # TAG names should always be lowercase

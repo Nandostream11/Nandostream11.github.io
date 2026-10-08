@@ -1,5 +1,5 @@
 ---
-title: Custom Dynamic Window Approach Implementation for Nav
+title: Custom Dynamic Window Approach (DWA) for ROS 2 Navigation and Autonomous Path Planning
 date: 2025-11-07 00:00:00 +0530
 categories: [Projects, Robotics]
 tags: [navigation, ros2, robotics]     # TAG names should always be lowercase
@@ -7,13 +7,15 @@ author: anand
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
 image: /assets/images/dwa-demo/frame_002.jpeg
+featured: true
+description: "Compact ROS 2 implementation of Dynamic Window Approach (DWA) local planner with trajectory sampling, cost optimization, and real-time collision avoidance for TurtleBot3."
 # toc: false        #to turn off table of contents on right side for this post
 # comments: false      #to turn off comments for this post
 # pin: true             #to pin to top of homepage
 # image:                        #for thumbnail
 #   path: /path/to/image
 #   alt: image alternative text
-excerpt: "This was in fulfillment with an assignment shared by a construction robotics company"
+excerpt: "Custom Dynamic Window Approach local planner for ROS 2, demonstrating trajectory sampling, cost optimization, and real-time obstacle avoidance on TurtleBot3."
 ---
 
 # Introduction to DWA Planner

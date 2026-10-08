@@ -1,5 +1,5 @@
 ---
-title: "Quad-Spider: The 4-legged bluetooth Spider"
+title: "SPYDER — 12-DOF Quadruped Spider with Arduino Control and Bluetooth Telemetry"
 date: 2025-07-03 00:00:00 +0530
 categories: [Projects, Internship]
 tags: [robotics, embedded]     # TAG names should always be lowercase
@@ -8,7 +8,7 @@ mermaid: true
 math: true
 image: /assets/images/spider.jpg
 description: "Design and embedded wireless control for a 12-DOF quadruped robot spider using Arduino, HC-05 Bluetooth UART, and an Android telemetry app."
-excerpt: "Design and embedded control for a 12-DOF quadruped robot spider using Arduino and Bluetooth UART."
+excerpt: "12-DOF quadrupedal spider robot with embedded Arduino control and Bluetooth telemetry for modular legged locomotion research."
 ---
 
 <div class="project-specs">

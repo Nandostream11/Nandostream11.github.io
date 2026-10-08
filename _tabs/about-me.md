@@ -32,7 +32,7 @@ I am especially interested in robotics problems at the boundary between **kinema
   <article class="card border-0 shadow-sm mb-3 experience-card">
     <div class="card-body">
       <h4 class="card-title mb-2"><strong>Robotics Software Engineer</strong></h4>
-      <p class="mb-2 text-muted"><small><em>Telebortix Innovations, Noida &nbsp;|&nbsp; June 2026 – Present</em></small></p>
+      <p class="mb-2 text-muted"><small><em>Telebortix Innovations, Noida &nbsp;|&nbsp; Ongoing (~0.3 year)</em></small></p>
       <ul class="mb-0 ps-3">
         <li><small><em>Working on a visual-inertial navigation stack for a custom unmanned aerial vehicle, drawing on research in estimation and perception.</em></small></li>
         <li><small><em>Tools &amp; technologies used: C++, ROS2, State Estimation, Computer Vision.</em></small></li>
@@ -43,7 +43,7 @@ I am especially interested in robotics problems at the boundary between **kinema
   <article class="card border-0 shadow-sm mb-3 experience-card">
     <div class="card-body">
       <h4 class="card-title mb-2"><strong>Robotics (Simulation) Engineer Intern</strong></h4>
-      <p class="mb-2 text-muted"><small><em>Cosmoserve Space, Hyderabad &nbsp;|&nbsp; January 2026 – May 2026</em></small></p>
+      <p class="mb-2 text-muted"><small><em>Cosmoserve Space, Hyderabad &nbsp;|&nbsp; ~0.4 year</em></small></p>
       <ul class="mb-0 ps-3">
         <li><small><em>Explored rigid-body dynamics and control strategies for a cable-driven soft-robotic mechanism using physics-based simulation tools.</em></small></li>
         <li><small><em>Compared simulation outputs against expected behavior to improve model assumptions and better match real conditions.</em></small></li>
@@ -55,7 +55,7 @@ I am especially interested in robotics problems at the boundary between **kinema
   <article class="card border-0 shadow-sm mb-3 experience-card">
     <div class="card-body">
       <h4 class="card-title mb-2"><strong>Robotics Intern (GET)</strong></h4>
-      <p class="mb-2 text-muted"><small><em>Bariflo Cybernetics, Bhubaneswar &nbsp;|&nbsp; May 2025 – July 2025</em></small></p>
+      <p class="mb-2 text-muted"><small><em>Bariflo Cybernetics, Bhubaneswar &nbsp;|&nbsp; ~0.2 year</em></small></p>
       <ul class="mb-0 ps-3">
         <li><small><em>Worked on kinematic and dynamic modeling for a hexapod amphibious robot in an environmental robotics project.</em></small></li>
         <li><small><em>Contributed to concept design and system-level development for an underwater drone intended for sensing and detection tasks.</em></small></li>

@@ -1,12 +1,13 @@
 ---
-title: Wheels revolutionized how humans— and later robots — moved through the world.
+title: Why Legged Robots Are Replacing Wheeled Locomotion — The Future of Off-Terrain Mobility
 date: 2025-05-24 19:15:56 +0530
 categories: [Blog, Medium]
 tags: [robots, wheels]
 author: anand
 mermaid: true
 image: /assets/images/a3616f4047115e968fb0d0d221407be7.png
-excerpt: "### **Isn’t it High Time for Robots without wheels?**..."
+description: "Exploring the shift from wheeled to legged locomotion in robotics and the advantages of multi-legged platforms for off-terrain mobility."
+excerpt: "Exploring why legged locomotion may be the next frontier in robotics after the dominance of wheeled platforms."
 ---
 
 ### **Isn’t it High Time for Robots without wheels?**

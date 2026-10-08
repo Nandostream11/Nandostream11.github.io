@@ -1,5 +1,5 @@
 ---
-title: Wormhole-based multi-map Navigation for inter world task execution
+title: Wormhole Navigation — Distributed Compute Architecture for Multi-Agent Task Execution
 date: 2025-10-18 00:00:00 +0530
 categories: [Projects, Robotics]
 tags: [simulations, robotics]     # TAG names should always be lowercase
@@ -8,14 +8,14 @@ author: anand
 mermaid: true       #diagram gen tool
 math: true          #MathJax enabled
 image: /assets/images/default.png    #to simply add an image
-# description: Short summary of the post.
+description: "Distributed compute architecture for seamless task switching and resource allocation in multi-agent robotics without task discontinuity."
 # toc: false        #to turn off table of contents on right side for this post
 # comments: false      #to turn off comments for this post
 # pin: true             #to pin to top of homepage
 # image:                        #for thumbnail
 #   path: /path/to/image
 #   alt: image alternative text
-excerpt: "To distribute and switch active relevant compute areas without the hassle of bridging the discontinuity of task execution"
+excerpt: "Distributed compute architecture for task switching and resource allocation in multi-agent robotics systems."
 ---
 
 # Introduction

@@ -10,7 +10,6 @@ math: true
 image: /assets/images/asl.png
 description: "Deep Convolutional Neural Network (CNN) for American Sign Language (ASL) static gesture recognition across 36 classes with 98.4% validation accuracy."
 excerpt: "Deep Convolutional Neural Network (CNN) for American Sign Language (ASL) static gesture recognition across 36 alphanumeric classes."
-featured: true
 ---
 
 <div class="project-specs">

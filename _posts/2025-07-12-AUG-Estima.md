@@ -1,5 +1,5 @@
 ---
-title: AUG Design ESTIMA
+title: AUG ESTIMA — Surrogate ML for Autonomous Underwater Glider Hydrodynamic Design & Optimization
 date: 2025-07-12 00:00:00 +0530
 categories: [Projects, Machine Learning, Design]
 tags: [machine learning, Underwater glider, design]     # TAG names should always be lowercase
